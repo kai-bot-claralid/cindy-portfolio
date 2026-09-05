@@ -480,23 +480,27 @@ body{font-size:16px}
 .timeline-item:first-child{padding-left:0}.timeline-item:last-child{padding-right:0;border-right:0}
 .timeline-item .t-period{margin:0 0 38px}
 .timeline-item h4{margin:0 0 12px;font-size:27px;line-height:1.08}.timeline-item p{margin-top:auto;font-size:15px;line-height:1.55}
-.tools-head{display:block}
-.compact-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.compact-tools>div{display:block;min-height:156px;padding:24px 20px;border-right:1px solid var(--line)}
-.compact-tools>div:first-child{padding-left:0}.compact-tools>div:last-child{padding-right:0;border-right:0}
-.compact-tools span{display:block;margin-bottom:34px;color:var(--olive);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-.compact-tools p{margin:0;font-size:15px;line-height:1.6}
+.tools-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.tools-carousel{overflow:hidden}
+.tools-track{display:flex;gap:18px;overflow-x:auto;padding:18px 2px 24px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.tools-track::-webkit-scrollbar{display:none}
+.tools-track .skill-card,.tools-track .skill-card:first-child,.tools-track .skill-card:last-child,.tools-track .skill-card.other-tools{flex:0 0 calc((100% - 36px)/3);display:block;grid-column:auto;min-height:340px;margin:0;padding:30px!important;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:16px;scroll-snap-align:start;box-shadow:none}
+.tools-track .skill-card:before{margin-bottom:42px}
+.tools-track .skill-card.ai-tools{background:var(--olive);color:#fff;border-color:var(--olive)}
+.tools-track .skill-card.other-tools:before{margin:0 0 42px}
+.tools-track .skill-card.other-tools .skill-note{margin:0 0 18px}
+.tools-nav{display:flex;gap:9px}
 .contact{padding-top:64px}.contact h2{font-size:clamp(50px,6.4vw,88px)}
 @media (max-width:900px){
  .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
  .capability{grid-template-columns:52px 1fr;gap:22px;padding:28px 0}.capability:first-child,.capability:last-child{padding:28px 0}.capability p,.capability small{grid-column:2}.capability h3{margin:-6px 0 0}
  .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){min-height:230px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.timeline-item:nth-child(2n){border-right:0}.timeline-item:nth-last-child(-n+2){border-bottom:0}.timeline-item:first-child{padding-left:0}.timeline-item:nth-child(3){padding-left:0}.timeline-item .t-period{margin-bottom:30px}
- .compact-tools{grid-template-columns:repeat(2,1fr)}.compact-tools>div,.compact-tools>div:first-child,.compact-tools>div:last-child{min-height:132px;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.compact-tools>div:nth-child(2n){border-right:0}.compact-tools>div:nth-last-child(-n+2){border-bottom:0}.compact-tools>div:last-child{grid-column:1/-1;border-top:1px solid var(--line);border-right:0}.compact-tools span{margin-bottom:22px}
+ .tools-track .skill-card,.tools-track .skill-card:first-child,.tools-track .skill-card:last-child,.tools-track .skill-card.other-tools{flex-basis:62%;min-height:330px;padding:27px!important}
 }
 @media (max-width:560px){
  .section{padding:56px 0}.section-head{margin-bottom:26px}.section-intro{font-size:16px}
  .projects-tabs{gap:16px;flex-wrap:wrap}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:88vw;min-height:470px}
- .compact-tools{grid-template-columns:1fr}.compact-tools>div,.compact-tools>div:first-child,.compact-tools>div:last-child{grid-column:auto;min-height:0;padding:17px 0;border-right:0;border-top:0;border-bottom:1px solid var(--line)}.compact-tools>div:last-child{border-bottom:0}.compact-tools span{margin-bottom:7px}.compact-tools p{font-size:15px}
+ .tools-head{align-items:center}.tools-track{gap:14px}.tools-track .skill-card,.tools-track .skill-card:first-child,.tools-track .skill-card:last-child,.tools-track .skill-card.other-tools{flex-basis:86vw;min-height:330px;padding:24px!important}
  .timeline{grid-template-columns:1fr}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){display:block;min-height:0;padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.timeline-item:last-child{border-bottom:0}.timeline-item .t-period{display:block;margin-bottom:9px}.timeline-item h4{font-size:27px}.timeline-item p{margin-top:0}.contact{padding-top:54px}
  .capability{display:block}.capability>span{margin-bottom:17px}.capability h3{margin:0 0 13px}.capability p,.capability small{margin-left:0}
 }
@@ -817,15 +821,13 @@ body{font-size:16px}
     <div class="wrap">
       <div class="section-head tools-head reveal">
         <h2 class="section-title">Selected Tools</h2>
+        <div class="tools-nav" aria-label="Tools carousel controls">
+          <button type="button" class="carousel-btn tools-prev" aria-label="Previous tool category">←</button>
+          <button type="button" class="carousel-btn tools-next" aria-label="Next tool category">→</button>
+        </div>
       </div>
-      <div class="compact-tools reveal">
-        <div><span>Design</span><p>Figma · Framer</p></div>
-        <div><span>Web</span><p>WordPress · Joomla · Shopify · DSpace · HTML/CSS</p></div>
-        <div><span>Development workflow</span><p>GitHub · VS Code · Cursor · Antigravity</p></div>
-        <div><span>AI</span><p>Claude Code · Codex · Gemini · ChatGPT</p></div>
-        <div><span>Creative</span><p>Photoshop · Illustrator · Affinity · Canva</p></div>
-      </div>
-      <div class="skills-grid tool-archive" hidden>
+      <div class="tools-carousel reveal">
+      <div class="skills-grid tools-track">
         <div class="skill-card reveal">
           <h4>Design &amp; Prototyping</h4>
           <p class="skill-note">My strongest area — interface design, prototyping and visual systems.</p>
@@ -875,6 +877,7 @@ body{font-size:16px}
             <span class="skill-tag"><span class="skill-logo-letter" aria-hidden="true">CP</span>CapCut</span>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -946,6 +949,20 @@ if(track){
     track.scrollBy({left:scrollStep(),behavior:'smooth'});
   });
   if(tabButtons.length) filterProjects('web-design');
+}
+
+const toolsTrack=document.querySelector('.tools-track');
+if(toolsTrack){
+  const toolsStep=()=>{
+    const card=toolsTrack.querySelector('.skill-card');
+    return card?card.getBoundingClientRect().width+18:360;
+  };
+  document.querySelector('.tools-prev')?.addEventListener('click',()=>{
+    toolsTrack.scrollBy({left:-toolsStep(),behavior:'smooth'});
+  });
+  document.querySelector('.tools-next')?.addEventListener('click',()=>{
+    toolsTrack.scrollBy({left:toolsStep(),behavior:'smooth'});
+  });
 }
 </script>
 </body>

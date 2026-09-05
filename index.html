@@ -409,6 +409,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
 .skill-card.ai-tools .skill-tag img{filter:brightness(0) invert(1);opacity:.9}
 .skill-card.ai-tools .skill-tag.featured{background:#fff;color:var(--ink);border-color:#fff;font-weight:600}
 .skill-card.ai-tools .skill-tag.featured img{filter:none;opacity:.85}
+.skill-card.other-tools{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,.7fr) minmax(220px,.8fr) minmax(0,1.5fr);gap:32px;align-items:start;padding:30px 0!important;border-top:1px solid var(--line);border-right:0}
+.skill-card.other-tools:before{content:"04 · OTHER CREATIVE TOOLS";margin:3px 0 0}
+.skill-card.other-tools h4{margin:0}.skill-card.other-tools .skill-note{margin:2px 0 0}.skill-card.other-tools .skill-tags{justify-content:flex-start}
 @media (max-width:900px){
  .section{padding:74px 0}.section-head{grid-template-columns:1fr;gap:15px;margin-bottom:36px}.section-intro{grid-column:1;margin:0}
  .project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex-basis:calc((100% - 20px)/2);min-height:470px}
@@ -417,6 +420,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
  .skills-grid{grid-template-columns:1fr}.skill-card,.skill-card:first-child,.skill-card:last-child{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}
  .skill-card:last-child{border-bottom:0}.skill-card:before{margin-bottom:24px}
  .skill-card.ai-tools{margin:18px 0 0;padding:30px 26px!important;border-radius:18px}
+ .skill-card.other-tools{display:block;padding:28px 0!important}.skill-card.other-tools:before{margin-bottom:24px}.skill-card.other-tools .skill-note{margin:8px 0 18px}
 }
 @media (max-width:560px){
  .section{padding:62px 0}.section-title{font-size:42px}.projects-tabs{align-items:center}
@@ -794,9 +798,22 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
           <div class="skill-tags">
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/claude.svg" alt="" loading="lazy">Claude Code</span>
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/claude.svg" alt="" loading="lazy">Claude · Design</span>
+            <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/googlegemini.svg" alt="" loading="lazy">Gemini</span>
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg" alt="" loading="lazy">ChatGPT</span>
+            <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg" alt="" loading="lazy">Codex</span>
+            <span class="skill-tag featured"><span class="skill-logo-letter" aria-hidden="true">AG</span>Antigravity</span>
+            <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" loading="lazy">Visual Studio Code</span>
             <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/canva.svg" alt="" loading="lazy">Canva AI</span>
             <span class="skill-tag">✦ AI Image Editing &amp; Enhancement</span>
+          </div>
+        </div>
+        <div class="skill-card other-tools reveal">
+          <h4>Other Creative Tools</h4>
+          <p class="skill-note">Supporting tools for visual design, content creation and video editing.</p>
+          <div class="skill-tags">
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/affinitydesigner.svg" alt="" loading="lazy">Affinity</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/canva.svg" alt="" loading="lazy">Canva</span>
+            <span class="skill-tag"><span class="skill-logo-letter" aria-hidden="true">CP</span>CapCut</span>
           </div>
         </div>
       </div>

@@ -449,6 +449,50 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
  .hero-specialty{margin-top:-4px;font-size:10px}.core-card{display:block;padding:30px 0}.core-number{display:block;margin-bottom:18px}.core-tags{margin-top:20px}.core-ai{margin:0 -15px;padding:30px 15px}
  .approach{grid-template-columns:1fr}.principle,.principle:nth-child(2n),.principle:nth-child(3n),.principle:nth-last-child(-n+2){min-height:0;border-right:0;border-bottom:1px solid var(--line)}.principle:last-child{border-bottom:0}.principle-num{margin-bottom:32px}
 }
+
+/* v4 — concise, evidence-first homepage */
+body{font-size:16px}
+.section{padding:76px 0}
+.section-head{margin-bottom:32px}
+.section-intro{font-size:17px;line-height:1.6}
+#work{background:var(--ivory)}
+.archive-link{font-size:13px;font-weight:600;color:var(--olive);border-bottom:1px solid currentColor;padding-bottom:3px}
+.projects-track{gap:18px}
+.project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex-basis:34%;min-height:510px}
+.project:first-child{flex-basis:48%;min-height:540px}
+.project:nth-child(n+4){display:none!important}
+.project-media{aspect-ratio:16/9;margin-bottom:24px}
+.project:first-child .project-media{aspect-ratio:16/9}
+.project p{font-size:15px;line-height:1.6}
+.project-index{font-size:12px}
+.project-body:after{content:"View project  ↗";display:block;margin-top:19px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tags{gap:6px}.tag{font-size:10px;padding:6px 8px}
+.capabilities{background:var(--paper)}
+.capability-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.capability{padding:30px 28px 34px;border-right:1px solid var(--line)}
+.capability:first-child{padding-left:0}.capability:last-child{padding-right:0;border-right:0}
+.capability>span{display:block;margin-bottom:38px;color:var(--olive);font-size:12px;letter-spacing:.14em}
+.capability h3{margin:0 0 13px;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:500;line-height:1.02}
+.capability p{margin:0 0 22px;color:var(--muted);font-size:15px;line-height:1.62}
+.capability small{display:block;color:var(--ink);font-size:12px;line-height:1.7}
+.timeline{padding-left:30px}
+.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){grid-template-columns:155px minmax(0,1fr);gap:30px;padding-bottom:28px}
+.timeline-item h4{font-size:30px}.timeline-item p{font-size:15px;line-height:1.55}
+.compact-tools{border-top:1px solid var(--line)}
+.compact-tools>div{display:grid;grid-template-columns:220px 1fr;gap:30px;padding:18px 0;border-bottom:1px solid var(--line)}
+.compact-tools span{color:var(--olive);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.compact-tools p{margin:0;font-size:16px;line-height:1.55}
+.contact{padding-top:64px}.contact h2{font-size:clamp(50px,6.4vw,88px)}
+@media (max-width:900px){
+ .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
+ .capability-grid{grid-template-columns:1fr}.capability,.capability:first-child,.capability:last-child{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}.capability:last-child{border-bottom:0}.capability>span{margin-bottom:20px}
+}
+@media (max-width:560px){
+ .section{padding:56px 0}.section-head{margin-bottom:26px}.section-intro{font-size:16px}
+ .projects-tabs{gap:16px}.archive-link{max-width:130px}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:88vw;min-height:470px}
+ .compact-tools>div{grid-template-columns:1fr;gap:7px;padding:16px 0}.compact-tools p{font-size:15px}
+ .timeline-item h4{font-size:27px}.contact{padding-top:54px}
+}
 </style>
 </head>
 <body>
@@ -457,10 +501,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
     <a class="brand" href="#top">Cindy Guzmán</a>
     <div class="nav-links">
       <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#approach">Workflow</a>
-      <a href="#skills">Skills</a>
-      <a class="nav-cta" href="#contact">Let's connect ↗</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#experience">Experience</a>
+      <a class="nav-cta" href="#contact">Contact ↗</a>
     </div>
   </div>
 </nav>
@@ -469,16 +512,14 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
   <section class="wrap hero">
     <div class="reveal">
       <div class="eyebrow">Web Developer · UX/UI Designer</div>
-      <h1>Web Developer &amp; UX/UI Designer.</h1>
-      <p class="hero-specialty">CMS development · Digital product design · AI-assisted development</p>
+      <h1>Web Developer &amp;<br>UX/UI Designer.</h1>
+      <p class="hero-specialty">Web Development · Digital Product Design · AI-Assisted Development</p>
       <p class="hero-copy">
         I design and build digital products from research and interface design through
-        implementation and launch—turning ideas and complex requirements into clear,
-        functional digital experiences.
+        implementation and launch—combining UX thinking, CMS-based development and modern AI-assisted workflows.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#work">View selected work</a>
-        <a class="btn secondary" href="#approach">View my workflow</a>
         <a class="btn secondary" href="https://www.linkedin.com/in/claralid/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
@@ -494,45 +535,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
     </div>
   </section>
 
-  <section class="section core-areas" id="expertise">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">Core areas</div>
-        <h2 class="section-title">Three connected ways I move digital work forward.</h2>
-      </div>
-      <div class="core-grid">
-        <article class="core-card reveal">
-          <span class="core-number">01</span>
-          <div><h3>Web Development &amp; CMS</h3><p>Responsive websites, platform adaptation and ongoing production work, with WordPress as my strongest CMS experience.</p></div>
-          <div class="core-tags"><span>WordPress</span><span>Joomla</span><span>Shopify</span><span>PrestaShop</span><span>DSpace</span></div>
-        </article>
-        <article class="core-card reveal">
-          <span class="core-number">02</span>
-          <div><h3>UX/UI &amp; Digital Product Design</h3><p>I translate user needs, business requirements and operational constraints into interfaces that are easier to understand and use.</p></div>
-          <div class="core-tags"><span>Research</span><span>Flows</span><span>UI Design</span><span>Prototyping</span><span>Accessibility</span></div>
-        </article>
-        <article class="core-card core-ai reveal">
-          <span class="core-number">03</span>
-          <div><h3>AI-Assisted Product Development</h3><p>I use AI development tools to turn product ideas and functional requirements into tested, working digital experiences.</p></div>
-          <div class="core-tags"><span>Prototyping</span><span>Code adaptation</span><span>Testing</span><span>Debugging</span><span>Deployment</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="work">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="kicker">Selected work</div>
-        <h2 class="section-title">Digital work, from first idea to live experience.</h2>
-        <p class="section-intro">Browse by discipline. Each project shows the kind of challenge, the experience created and the part I played—so the work is easy to understand at a glance.</p>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-intro">A selection of digital products, interfaces and web experiences.</p>
       </div>
 
       <div class="projects-tabs reveal">
-        <div class="tab-group" role="tablist">
-          <button type="button" class="tab-btn active" data-filter="web-design" role="tab" aria-selected="true">Web Development</button>
-          <button type="button" class="tab-btn" data-filter="ux-ui" role="tab" aria-selected="false">UX/UI Design</button>
-        </div>
+        <a class="archive-link" href="https://www.behance.net/cindycguzman" target="_blank" rel="noopener">View project archive ↗</a>
         <div class="carousel-nav">
           <button type="button" class="carousel-btn carousel-prev" aria-label="Previous project">←</button>
           <button type="button" class="carousel-btn carousel-next" aria-label="Next project">→</button>
@@ -544,14 +556,14 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
           <a class="project olive" data-category="web-design" href="https://aminoweb.com/" target="_blank" rel="noopener">
             <div class="project-media"><img src="images/amino-web.svg" alt="Amino Web project preview" loading="lazy"></div>
             <div class="project-top">
-              <span class="project-index">01 · Independent product</span>
+              <span class="project-index">Digital Product · Web Platform</span>
               <span class="project-arrow">↗</span>
             </div>
             <div class="project-body">
-              <h3>Amino Web</h3>
-              <p>A product-led web project centered on a clean, modern experience and a simpler way to create digital spaces.</p>
+              <h3>Amino</h3>
+              <p>Designed and launched a functional platform for creating microsites and link-based digital spaces.</p>
               <div class="tags">
-                <span class="tag">Product</span><span class="tag">UX/UI</span><span class="tag">Web Development</span>
+                <span class="tag">Product Design</span><span class="tag">UX/UI</span><span class="tag">AI-Assisted Development</span>
               </div>
             </div>
           </a>
@@ -559,7 +571,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
           <a class="project dark" data-category="ux-ui" href="https://minosteps.com/" target="_blank" rel="noopener">
             <div class="project-media"><img src="images/minosteps.jpg" alt="MinoSteps website preview" loading="lazy"></div>
             <div class="project-top">
-              <span class="project-index">02 · Digital product</span>
+              <span class="project-index">Accessible Digital Product</span>
               <span class="project-arrow">↗</span>
             </div>
             <div class="project-body">
@@ -574,12 +586,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
           <a class="project" data-category="ux-ui" href="https://unphu.edu.do/" target="_blank" rel="noopener">
             <div class="project-media"><img src="images/unphu.jpg" alt="UNPHU website preview" loading="lazy"></div>
             <div class="project-top">
-              <span class="project-index">03 · Collaborative project</span>
+              <span class="project-index">Institutional Website · UX/UI</span>
               <span class="project-arrow">↗</span>
             </div>
             <div class="project-body">
               <h3>UNPHU</h3>
-              <p>UX/UI research and selected interface screens for the university's institutional website, developed as part of a multidisciplinary team.</p>
+              <p>Research-informed interface work for a complex institutional website, created with a multidisciplinary team.</p>
               <div class="tags">
                 <span class="tag">UX Research</span><span class="tag">UX/UI</span><span class="tag">Team Project</span>
               </div>
@@ -723,27 +735,31 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
     </div>
   </section>
 
-  <section class="section" id="about">
+  <section class="section capabilities" id="capabilities">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker">About</div>
-        <h2 class="section-title">I work across the gap between design and implementation.</h2>
+        <div class="kicker">Capabilities</div>
+        <h2 class="section-title">What I Do</h2>
       </div>
-      <div class="about-grid">
-        <div class="reveal">
-          <p class="about-copy">Product thinking, visual clarity and a practical path to launch.</p>
-          <p class="about-summary">I'm Cindy Guzmán, a Web Developer and UX/UI Designer based in the Dominican Republic. I work across research, product structure, interface design and implementation, with experience building websites, digital platforms and internal tools.</p>
-          <p class="about-summary about-second">My strength is understanding the product, designing the experience and using the right combination of CMSs, front-end fundamentals and AI development tools to move an idea toward a working digital product.</p>
-        </div>
-        <div class="about-detail reveal">
-          <div class="meta-list">
-            <div class="meta-row"><span>Current</span><strong>Content &amp; publications · UNPHU</strong></div>
-            <div class="meta-row"><span>Focus</span><strong>Web · UX/UI · Digital Products</strong></div>
-            <div class="meta-row"><span>Interest</span><strong>AI-Assisted Product Development</strong></div>
-            <div class="meta-row"><span>Based in</span><strong>Santo Domingo, Dominican Republic</strong></div>
-            <div class="meta-row"><span>Open to</span><strong>Remote roles · Selected collaborations</strong></div>
-          </div>
-        </div>
+      <div class="capability-grid">
+        <article class="capability reveal">
+          <span>01</span>
+          <h3>Web Development &amp; CMS</h3>
+          <p>Build, launch and maintain responsive websites and digital platforms using CMSs and front-end fundamentals.</p>
+          <small>WordPress · Joomla · Shopify · DSpace · HTML/CSS</small>
+        </article>
+        <article class="capability reveal">
+          <span>02</span>
+          <h3>UX/UI &amp; Digital Product Design</h3>
+          <p>Turn complex requirements into clear user flows, interfaces and functional product experiences.</p>
+          <small>UX Research · User Flows · UI Design · Prototyping · Design Systems</small>
+        </article>
+        <article class="capability reveal">
+          <span>03</span>
+          <h3>AI-Assisted Product Development</h3>
+          <p>Use modern AI development workflows to move product ideas and interface designs toward functional digital products.</p>
+          <small>Claude Code · Cursor · Antigravity · Codex · GitHub</small>
+        </article>
       </div>
     </div>
   </section>
@@ -752,78 +768,37 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
     <div class="wrap">
       <div class="section-head reveal">
         <div class="kicker">Experience</div>
-        <h2 class="section-title">Selected roles and professional experience.</h2>
+        <h2 class="section-title">Experience</h2>
       </div>
       <div class="timeline">
         <div class="timeline-item reveal">
           <span class="t-period">Current</span>
           <div>
             <h4>UNPHU — Content &amp; Publications</h4>
-            <p>Content, publications and digital work within a university environment, collaborating across institutional needs and platforms.</p>
+            <p>Content, publications and digital work across institutional platforms.</p>
           </div>
         </div>
         <div class="timeline-item reveal">
           <span class="t-period">Jun 2022 — Present</span>
           <div>
             <h4>Behealth PR — Web Development</h4>
-            <p>Ongoing web development work for a Puerto Rico–based client, covering build, iteration and day-to-day maintenance.</p>
+            <p>Website builds, production updates, iteration and ongoing maintenance.</p>
           </div>
         </div>
         <div class="timeline-item reveal">
           <span class="t-period">Sept 2022 — Feb 2023</span>
           <div>
             <h4>Cervecería Nacional Dominicana — UX/UI Designer</h4>
-            <p>UX/UI design for a multinational team, translating business and user needs into clear, usable interfaces.</p>
+            <p>Translated business and user needs into clear, usable interfaces within a multinational team.</p>
           </div>
         </div>
         <div class="timeline-item reveal">
           <span class="t-period">Aug 2019 — Nov 2021</span>
           <div>
             <h4>Gmedia Dominicana — Web Developer &amp; Web Dept. Coordinator</h4>
-            <p>Led the web department and built/maintained sites in WordPress, Joomla and Shopify for a range of clients.</p>
+            <p>Coordinated the web department and built and maintained CMS websites for multiple clients.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="approach">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">My workflow</div>
-        <h2 class="section-title">From idea to working product.</h2>
-      </div>
-      <div class="approach">
-        <article class="principle reveal">
-          <div class="principle-num">01 · Discover</div>
-          <h4>Understand.</h4>
-          <p>Clarify the problem, audience, requirements, constraints and expected outcome.</p>
-        </article>
-        <article class="principle reveal">
-          <div class="principle-num">02 · Define</div>
-          <h4>Structure.</h4>
-          <p>Shape user flows, information architecture, priorities and functional requirements.</p>
-        </article>
-        <article class="principle reveal">
-          <div class="principle-num">03 · Create</div>
-          <h4>Design.</h4>
-          <p>Define how the experience should work and look through wireframes, UI and prototypes.</p>
-        </article>
-        <article class="principle reveal">
-          <div class="principle-num">04 · Implement</div>
-          <h4>Build.</h4>
-          <p>Choose the right path: CMS, DSpace, front-end fundamentals or AI-assisted development.</p>
-        </article>
-        <article class="principle reveal">
-          <div class="principle-num">05 · Test</div>
-          <h4>Validate.</h4>
-          <p>Review functionality, responsive behavior, UX, content and feedback in a working product.</p>
-        </article>
-        <article class="principle reveal">
-          <div class="principle-num">06 · Improve</div>
-          <h4>Ship &amp; iterate.</h4>
-          <p>Publish, maintain and improve the product based on real use and new requirements.</p>
-        </article>
       </div>
     </div>
   </section>
@@ -831,10 +806,17 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker">Skills &amp; Tools</div>
-        <h2 class="section-title">Tools I use to design, build and ship.</h2>
+        <div class="kicker">Toolset</div>
+        <h2 class="section-title">Selected Tools</h2>
       </div>
-      <div class="skills-grid">
+      <div class="compact-tools reveal">
+        <div><span>Design</span><p>Figma · Framer</p></div>
+        <div><span>Web</span><p>WordPress · Joomla · Shopify · DSpace · HTML/CSS</p></div>
+        <div><span>Development workflow</span><p>GitHub · VS Code · Cursor · Antigravity</p></div>
+        <div><span>AI</span><p>Claude Code · Codex · Gemini · ChatGPT</p></div>
+        <div><span>Creative</span><p>Photoshop · Illustrator · Affinity · Canva</p></div>
+      </div>
+      <div class="skills-grid tool-archive" hidden>
         <div class="skill-card reveal">
           <h4>Design &amp; Prototyping</h4>
           <p class="skill-note">My strongest area — interface design, prototyping and visual systems.</p>
@@ -890,9 +872,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2 class="reveal">Let's work together.</h2>
+      <h2 class="reveal">Open to remote opportunities.</h2>
       <div class="contact-side reveal">
-        <p>Available for selected web, UX/UI and digital product opportunities.</p>
+        <p>Web Development · UX/UI · Digital Products</p>
         <div class="socials">
           <a href="https://www.linkedin.com/in/claralid/" target="_blank" rel="noopener"><span>LinkedIn</span><span>↗</span></a>
           <a href="https://www.behance.net/cindycguzman" target="_blank" rel="noopener"><span>Behance</span><span>↗</span></a>
@@ -954,7 +936,7 @@ if(track){
   document.querySelector('.carousel-next')?.addEventListener('click',()=>{
     track.scrollBy({left:scrollStep(),behavior:'smooth'});
   });
-  filterProjects('web-design');
+  if(tabButtons.length) filterProjects('web-design');
 }
 </script>
 </body>

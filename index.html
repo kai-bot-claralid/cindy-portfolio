@@ -125,6 +125,10 @@ h1{
   transition:background .2s ease,color .2s ease;
 }
 .carousel-btn:hover{background:var(--ink);color:#fff}
+.carousel-dots{display:flex;justify-content:center;align-items:center;gap:8px;min-height:18px;margin-top:8px}
+.carousel-dot{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:var(--stone);opacity:.45;cursor:pointer;transition:width .2s ease,opacity .2s ease,background .2s ease}
+.carousel-dot.active{width:20px;border-radius:999px;background:var(--olive);opacity:1}
+.carousel-dot:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
 .project-carousel{position:relative}
 .projects-track{
  display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -558,6 +562,7 @@ body{font-size:16px}
         <div class="tab-group" role="tablist" aria-label="Project categories">
           <button type="button" class="tab-btn active" data-filter="web-design" role="tab" aria-selected="true">Web Development</button>
           <button type="button" class="tab-btn" data-filter="ux-ui" role="tab" aria-selected="false">UX/UI Design</button>
+          <button type="button" class="tab-btn" data-filter="ai-development" role="tab" aria-selected="false">AI Development</button>
         </div>
         <div class="carousel-nav">
           <button type="button" class="carousel-btn carousel-prev" aria-label="Previous project">←</button>
@@ -567,7 +572,7 @@ body{font-size:16px}
 
       <div class="project-carousel reveal">
         <div class="projects-track">
-          <a class="project olive" data-category="web-design" href="https://aminoweb.com/" target="_blank" rel="noopener">
+          <a class="project olive" data-category="web-design ai-development" href="https://aminoweb.com/" target="_blank" rel="noopener">
             <div class="project-media"><img src="images/amino-web.svg" alt="Amino Web project preview" loading="lazy"></div>
             <div class="project-top">
               <span class="project-index">Digital Product · Web Platform</span>
@@ -745,6 +750,7 @@ body{font-size:16px}
             <div class="project-body"><h3>SEDECORP</h3><p>A visual redesign proposal for a technology security company, focused on hierarchy and trust.</p><div class="tags"><span class="tag">Web Design</span><span class="tag">UX/UI</span><span class="tag">Figma</span></div></div>
           </a>
         </div>
+        <div class="carousel-dots project-dots" aria-label="Project carousel position"></div>
       </div>
     </div>
   </section>
@@ -878,6 +884,7 @@ body{font-size:16px}
           </div>
         </div>
       </div>
+      <div class="carousel-dots tools-dots" aria-label="Tools carousel position"></div>
       </div>
     </div>
   </section>
@@ -918,6 +925,32 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const tabButtons=document.querySelectorAll('.tab-btn');
 const track=document.querySelector('.projects-track');
 const projectCards=document.querySelectorAll('.project-carousel .project');
+const projectDots=document.querySelector('.project-dots');
+
+function buildDots(trackElement,cards,dotsElement,gap=18){
+  if(!trackElement||!dotsElement) return;
+  const visibleCards=Array.from(cards).filter(card=>card.style.display!=='none');
+  const firstCard=visibleCards[0];
+  const step=firstCard?firstCard.getBoundingClientRect().width+gap:360;
+  const visibleAtOnce=firstCard?Math.max(1,Math.floor((trackElement.clientWidth+gap)/step)):1;
+  const positions=Math.max(1,visibleCards.length-visibleAtOnce+1);
+  dotsElement.replaceChildren();
+  Array.from({length:positions}).forEach((_,index)=>{
+    const dot=document.createElement('button');
+    dot.type='button';
+    dot.className='carousel-dot'+(index===0?' active':'');
+    dot.setAttribute('aria-label',`Go to carousel position ${index+1} of ${positions}`);
+    dot.addEventListener('click',()=>trackElement.scrollTo({left:index*step,behavior:'smooth'}));
+    dotsElement.appendChild(dot);
+  });
+  const update=()=>{
+    const first=visibleCards[0];
+    if(!first) return;
+    const index=Math.max(0,Math.min(positions-1,Math.round(trackElement.scrollLeft/step)));
+    dotsElement.querySelectorAll('.carousel-dot').forEach((dot,i)=>dot.classList.toggle('active',i===index));
+  };
+  trackElement.onscroll=()=>requestAnimationFrame(update);
+}
 
 function filterProjects(category){
   projectCards.forEach(card=>{
@@ -925,6 +958,7 @@ function filterProjects(category){
     card.style.display=cats.includes(category)?'':'none';
   });
   if(track) track.scrollTo({left:0,behavior:'smooth'});
+  buildDots(track,projectCards,projectDots);
 }
 
 tabButtons.forEach(btn=>{
@@ -953,6 +987,8 @@ if(track){
 
 const toolsTrack=document.querySelector('.tools-track');
 if(toolsTrack){
+  const toolCards=toolsTrack.querySelectorAll('.skill-card');
+  buildDots(toolsTrack,toolCards,document.querySelector('.tools-dots'));
   const toolsStep=()=>{
     const card=toolsTrack.querySelector('.skill-card');
     return card?card.getBoundingClientRect().width+18:360;

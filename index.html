@@ -399,6 +399,15 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
 .skill-card:before{display:block;margin-bottom:54px;color:var(--olive);font-size:11px;letter-spacing:.16em}
 .skill-card:nth-child(1):before{content:"01 · DESIGN"}.skill-card:nth-child(2):before{content:"02 · BUILD"}.skill-card:nth-child(3):before{content:"03 · AI WORKFLOW"}
 .skill-card h4{font-size:29px}.skill-card .skill-note{margin:0 0 18px}.skill-tag{background:var(--ivory)}
+.skill-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 12px}
+.skill-tag img{width:16px;height:16px;display:block;object-fit:contain;opacity:.84}
+.skill-card.ai-tools{margin:-18px 0;padding:34px 28px!important;background:var(--olive);color:#fff;border:0;border-radius:18px;box-shadow:0 18px 48px rgba(90,97,76,.2)}
+.skill-card.ai-tools:before{color:rgba(255,255,255,.58)}
+.skill-card.ai-tools .skill-note{color:rgba(255,255,255,.7)}
+.skill-card.ai-tools .skill-tag{color:#fff;background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.24)}
+.skill-card.ai-tools .skill-tag img{filter:brightness(0) invert(1);opacity:.9}
+.skill-card.ai-tools .skill-tag.featured{background:#fff;color:var(--ink);border-color:#fff;font-weight:600}
+.skill-card.ai-tools .skill-tag.featured img{filter:none;opacity:.85}
 @media (max-width:900px){
  .section{padding:74px 0}.section-head{grid-template-columns:1fr;gap:15px;margin-bottom:36px}.section-intro{grid-column:1;margin:0}
  .project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex-basis:calc((100% - 20px)/2);min-height:470px}
@@ -406,6 +415,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
  .timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){grid-template-columns:145px 1fr;gap:26px}
  .skills-grid{grid-template-columns:1fr}.skill-card,.skill-card:first-child,.skill-card:last-child{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}
  .skill-card:last-child{border-bottom:0}.skill-card:before{margin-bottom:24px}
+ .skill-card.ai-tools{margin:18px 0 0;padding:30px 26px!important;border-radius:18px}
 }
 @media (max-width:560px){
  .section{padding:62px 0}.section-title{font-size:42px}.projects-tabs{align-items:center}
@@ -758,32 +768,32 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
           <h4>Design &amp; Prototyping</h4>
           <p class="skill-note">My strongest area — interface design, prototyping and visual systems.</p>
           <div class="skill-tags">
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">Framer</span>
-            <span class="skill-tag">Adobe Photoshop</span>
-            <span class="skill-tag">Adobe Illustrator</span>
-            <span class="skill-tag">Canva</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/figma.svg" alt="" loading="lazy">Figma</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/framer.svg" alt="" loading="lazy">Framer</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/adobephotoshop.svg" alt="" loading="lazy">Adobe Photoshop</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/adobeillustrator.svg" alt="" loading="lazy">Adobe Illustrator</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/canva.svg" alt="" loading="lazy">Canva</span>
           </div>
         </div>
         <div class="skill-card reveal">
           <h4>Web Platforms &amp; Development</h4>
           <p class="skill-note">Conventional web tooling used to build and maintain live sites.</p>
           <div class="skill-tags">
-            <span class="skill-tag">WordPress</span>
-            <span class="skill-tag">Joomla</span>
-            <span class="skill-tag">Shopify</span>
-            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/wordpress.svg" alt="" loading="lazy">WordPress</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/joomla.svg" alt="" loading="lazy">Joomla</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/shopify.svg" alt="" loading="lazy">Shopify</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/html5.svg" alt="" loading="lazy">HTML/CSS</span>
           </div>
         </div>
-        <div class="skill-card reveal">
+        <div class="skill-card ai-tools reveal">
           <h4>AI-Assisted Workflow</h4>
           <p class="skill-note">AI tools integrated into design, development and image work — not a replacement for craft, but part of it.</p>
           <div class="skill-tags">
-            <span class="skill-tag">Claude Code</span>
-            <span class="skill-tag">Claude (Design)</span>
-            <span class="skill-tag">ChatGPT</span>
-            <span class="skill-tag">Canva AI</span>
-            <span class="skill-tag">AI Image Editing &amp; Enhancement</span>
+            <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/claude.svg" alt="" loading="lazy">Claude Code</span>
+            <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/claude.svg" alt="" loading="lazy">Claude · Design</span>
+            <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/openai.svg" alt="" loading="lazy">ChatGPT</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/canva.svg" alt="" loading="lazy">Canva AI</span>
+            <span class="skill-tag">✦ AI Image Editing &amp; Enhancement</span>
           </div>
         </div>
       </div>

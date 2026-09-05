@@ -412,6 +412,23 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
 .skill-card.other-tools{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,.7fr) minmax(220px,.8fr) minmax(0,1.5fr);gap:32px;align-items:start;padding:30px 0!important;border-top:1px solid var(--line);border-right:0}
 .skill-card.other-tools:before{content:"04 · OTHER CREATIVE TOOLS";margin:3px 0 0}
 .skill-card.other-tools h4{margin:0}.skill-card.other-tools .skill-note{margin:2px 0 0}.skill-card.other-tools .skill-tags{justify-content:flex-start}
+.hero-specialty{max-width:680px;margin:-8px 0 18px;color:var(--olive);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.6}
+.core-areas{background:var(--ink);color:#fff}
+.core-areas .kicker{color:var(--stone)}
+.core-grid{border-top:1px solid rgba(255,255,255,.2)}
+.core-card{display:grid;grid-template-columns:90px minmax(280px,.8fr) minmax(320px,1.2fr);gap:38px;align-items:start;padding:38px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.core-number{color:var(--stone);font-size:12px;letter-spacing:.16em}
+.core-card h3{margin:-7px 0 11px;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(31px,3.2vw,43px);font-weight:500;line-height:1}
+.core-card p{margin:0;color:rgba(255,255,255,.62);font-size:14px;line-height:1.65;max-width:520px}
+.core-tags{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.core-tags span{padding:8px 11px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:rgba(255,255,255,.72);font-size:10px;letter-spacing:.07em;text-transform:uppercase}
+.core-ai{margin:0 -24px;padding:38px 24px;background:var(--olive);border-bottom:0;border-radius:16px}
+#approach{display:block;background:var(--ivory)}
+.approach{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--paper)}
+.principle{min-height:280px;padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.principle:nth-child(3n){border-right:0}.principle:nth-last-child(-n+3){border-bottom:0}
+.principle-num{margin-bottom:60px}.principle h4{font-size:32px}.principle p{font-size:13px}
+.about-second{margin-top:18px}
 @media (max-width:900px){
  .section{padding:74px 0}.section-head{grid-template-columns:1fr;gap:15px;margin-bottom:36px}.section-intro{grid-column:1;margin:0}
  .project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex-basis:calc((100% - 20px)/2);min-height:470px}
@@ -421,12 +438,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
  .skill-card:last-child{border-bottom:0}.skill-card:before{margin-bottom:24px}
  .skill-card.ai-tools{margin:18px 0 0;padding:30px 26px!important;border-radius:18px}
  .skill-card.other-tools{display:block;padding:28px 0!important}.skill-card.other-tools:before{margin-bottom:24px}.skill-card.other-tools .skill-note{margin:8px 0 18px}
+ .core-card{grid-template-columns:60px 1fr;gap:24px}.core-tags{grid-column:2;justify-content:flex-start}.core-ai{margin:0 -18px;padding:32px 18px}
+ .approach{grid-template-columns:repeat(2,1fr)}.principle,.principle:nth-child(3n){border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.principle:nth-child(2n){border-right:0}.principle:nth-last-child(-n+2){border-bottom:0}
 }
 @media (max-width:560px){
  .section{padding:62px 0}.section-title{font-size:42px}.projects-tabs{align-items:center}
  .projects-track{display:flex;gap:14px}.project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex-basis:86vw;min-height:455px;padding:17px}
  .about-grid{padding:28px 22px;border-radius:18px}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){display:block;padding:0 0 34px}
  .timeline-item .t-period{margin-bottom:9px}
+ .hero-specialty{margin-top:-4px;font-size:10px}.core-card{display:block;padding:30px 0}.core-number{display:block;margin-bottom:18px}.core-tags{margin-top:20px}.core-ai{margin:0 -15px;padding:30px 15px}
+ .approach{grid-template-columns:1fr}.principle,.principle:nth-child(2n),.principle:nth-child(3n),.principle:nth-last-child(-n+2){min-height:0;border-right:0;border-bottom:1px solid var(--line)}.principle:last-child{border-bottom:0}.principle-num{margin-bottom:32px}
 }
 </style>
 </head>
@@ -437,7 +458,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
+      <a href="#approach">Workflow</a>
       <a href="#skills">Skills</a>
       <a class="nav-cta" href="#contact">Let's connect ↗</a>
     </div>
@@ -448,14 +469,16 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
   <section class="wrap hero">
     <div class="reveal">
       <div class="eyebrow">Web Developer · UX/UI Designer</div>
-      <h1>Web development and UX/UI, thoughtfully combined.</h1>
+      <h1>Web Developer &amp; UX/UI Designer.</h1>
+      <p class="hero-specialty">CMS development · Digital product design · AI-assisted development</p>
       <p class="hero-copy">
-        I design and build thoughtful digital experiences — combining UX thinking,
-        interface design and web development to turn complex ideas into products
-        that feel simple, useful and intentional.
+        I design and build digital products from research and interface design through
+        implementation and launch—turning ideas and complex requirements into clear,
+        functional digital experiences.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#work">View selected work</a>
+        <a class="btn secondary" href="#approach">View my workflow</a>
         <a class="btn secondary" href="https://www.linkedin.com/in/claralid/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
@@ -467,6 +490,32 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
       <div class="portrait-note">
         <strong>Santo Domingo, DR</strong>
         Currently working across web, UX/UI and digital product experiences.
+      </div>
+    </div>
+  </section>
+
+  <section class="section core-areas" id="expertise">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Core areas</div>
+        <h2 class="section-title">Three connected ways I move digital work forward.</h2>
+      </div>
+      <div class="core-grid">
+        <article class="core-card reveal">
+          <span class="core-number">01</span>
+          <div><h3>Web Development &amp; CMS</h3><p>Responsive websites, platform adaptation and ongoing production work, with WordPress as my strongest CMS experience.</p></div>
+          <div class="core-tags"><span>WordPress</span><span>Joomla</span><span>Shopify</span><span>PrestaShop</span><span>DSpace</span></div>
+        </article>
+        <article class="core-card reveal">
+          <span class="core-number">02</span>
+          <div><h3>UX/UI &amp; Digital Product Design</h3><p>I translate user needs, business requirements and operational constraints into interfaces that are easier to understand and use.</p></div>
+          <div class="core-tags"><span>Research</span><span>Flows</span><span>UI Design</span><span>Prototyping</span><span>Accessibility</span></div>
+        </article>
+        <article class="core-card core-ai reveal">
+          <span class="core-number">03</span>
+          <div><h3>AI-Assisted Product Development</h3><p>I use AI development tools to turn product ideas and functional requirements into tested, working digital experiences.</p></div>
+          <div class="core-tags"><span>Prototyping</span><span>Code adaptation</span><span>Testing</span><span>Debugging</span><span>Deployment</span></div>
+        </article>
       </div>
     </div>
   </section>
@@ -678,17 +727,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
     <div class="wrap">
       <div class="section-head reveal">
         <div class="kicker">About</div>
-        <h2 class="section-title">A hybrid profile for thoughtful digital work.</h2>
+        <h2 class="section-title">I work across the gap between design and implementation.</h2>
       </div>
       <div class="about-grid">
         <div class="reveal">
-          <p class="about-copy">Designer’s eye. Developer’s logic.</p>
-          <p class="about-summary">I'm Cindy Guzmán, a Web Developer and UX/UI Designer based in the Dominican Republic. I move between research, interface design and implementation to turn complex requirements into clear, functional digital experiences.</p>
+          <p class="about-copy">Product thinking, visual clarity and a practical path to launch.</p>
+          <p class="about-summary">I'm Cindy Guzmán, a Web Developer and UX/UI Designer based in the Dominican Republic. I work across research, product structure, interface design and implementation, with experience building websites, digital platforms and internal tools.</p>
+          <p class="about-summary about-second">My strength is understanding the product, designing the experience and using the right combination of CMSs, front-end fundamentals and AI development tools to move an idea toward a working digital product.</p>
         </div>
         <div class="about-detail reveal">
           <div class="meta-list">
             <div class="meta-row"><span>Current</span><strong>Content &amp; publications · UNPHU</strong></div>
             <div class="meta-row"><span>Focus</span><strong>Web · UX/UI · Digital Products</strong></div>
+            <div class="meta-row"><span>Interest</span><strong>AI-Assisted Product Development</strong></div>
             <div class="meta-row"><span>Based in</span><strong>Santo Domingo, Dominican Republic</strong></div>
             <div class="meta-row"><span>Open to</span><strong>Remote roles · Selected collaborations</strong></div>
           </div>
@@ -704,6 +755,13 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
         <h2 class="section-title">Selected roles and professional experience.</h2>
       </div>
       <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="t-period">Current</span>
+          <div>
+            <h4>UNPHU — Content &amp; Publications</h4>
+            <p>Content, publications and digital work within a university environment, collaborating across institutional needs and platforms.</p>
+          </div>
+        </div>
         <div class="timeline-item reveal">
           <span class="t-period">Jun 2022 — Present</span>
           <div>
@@ -725,13 +783,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
             <p>Led the web department and built/maintained sites in WordPress, Joomla and Shopify for a range of clients.</p>
           </div>
         </div>
-        <div class="timeline-item reveal">
-          <span class="t-period">2013 — Present</span>
-          <div>
-            <h4>Instituto Tecnológico de las Américas — Multimedia Technologist</h4>
-            <p>Foundational training in multimedia, design and digital production.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -739,24 +790,39 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
   <section class="section" id="approach">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="kicker">How I work</div>
-        <h2 class="section-title">Less decoration. More intention.</h2>
+        <div class="kicker">My workflow</div>
+        <h2 class="section-title">From idea to working product.</h2>
       </div>
       <div class="approach">
         <article class="principle reveal">
-          <div class="principle-num">01</div>
-          <h4>Clarity first.</h4>
-          <p>Structure and hierarchy come before visual polish. Good interfaces help people understand what matters without effort.</p>
+          <div class="principle-num">01 · Discover</div>
+          <h4>Understand.</h4>
+          <p>Clarify the problem, audience, requirements, constraints and expected outcome.</p>
         </article>
         <article class="principle reveal">
-          <div class="principle-num">02</div>
-          <h4>Useful by design.</h4>
-          <p>I connect UX decisions to real behavior, content and goals — not just to what looks good in a static mockup.</p>
+          <div class="principle-num">02 · Define</div>
+          <h4>Structure.</h4>
+          <p>Shape user flows, information architecture, priorities and functional requirements.</p>
         </article>
         <article class="principle reveal">
-          <div class="principle-num">03</div>
-          <h4>Built to work.</h4>
-          <p>Because I also build for the web, I design with implementation, responsiveness and maintainability in mind.</p>
+          <div class="principle-num">03 · Create</div>
+          <h4>Design.</h4>
+          <p>Define how the experience should work and look through wireframes, UI and prototypes.</p>
+        </article>
+        <article class="principle reveal">
+          <div class="principle-num">04 · Implement</div>
+          <h4>Build.</h4>
+          <p>Choose the right path: CMS, DSpace, front-end fundamentals or AI-assisted development.</p>
+        </article>
+        <article class="principle reveal">
+          <div class="principle-num">05 · Test</div>
+          <h4>Validate.</h4>
+          <p>Review functionality, responsive behavior, UX, content and feedback in a working product.</p>
+        </article>
+        <article class="principle reveal">
+          <div class="principle-num">06 · Improve</div>
+          <h4>Ship &amp; iterate.</h4>
+          <p>Publish, maintain and improve the product based on real use and new requirements.</p>
         </article>
       </div>
     </div>
@@ -782,7 +848,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
         </div>
         <div class="skill-card reveal">
           <h4>Web Platforms &amp; Development</h4>
-          <p class="skill-note">Conventional web tooling used to build and maintain live sites.</p>
+          <p class="skill-note">CMS-led web work, responsive implementation and maintenance—with WordPress as my strongest platform.</p>
           <div class="skill-tags">
             <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/wordpress.svg" alt="" loading="lazy">WordPress</span>
             <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/joomla.svg" alt="" loading="lazy">Joomla</span>
@@ -801,8 +867,10 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/googlegemini.svg" alt="" loading="lazy">Gemini</span>
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg" alt="" loading="lazy">ChatGPT</span>
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/openai.svg" alt="" loading="lazy">Codex</span>
+            <span class="skill-tag featured"><span class="skill-logo-letter" aria-hidden="true">CU</span>Cursor</span>
             <span class="skill-tag featured"><span class="skill-logo-letter" aria-hidden="true">AG</span>Antigravity</span>
             <span class="skill-tag featured"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" loading="lazy">Visual Studio Code</span>
+            <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@16.29.0/icons/github.svg" alt="" loading="lazy">GitHub</span>
             <span class="skill-tag"><img src="https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/canva.svg" alt="" loading="lazy">Canva AI</span>
             <span class="skill-tag">✦ AI Image Editing &amp; Enhancement</span>
           </div>

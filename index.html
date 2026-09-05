@@ -458,23 +458,22 @@ body{font-size:16px}
 #work{background:var(--ivory)}
 .archive-link{font-size:13px;font-weight:600;color:var(--olive);border-bottom:1px solid currentColor;padding-bottom:3px}
 .projects-track{gap:18px}
-.project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex-basis:34%;min-height:510px}
-.project:first-child{flex-basis:48%;min-height:540px}
-.project:nth-child(n+4){display:none!important}
+.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:calc((100% - 36px)/3);min-height:500px}
 .project-media{aspect-ratio:16/9;margin-bottom:24px}
 .project:first-child .project-media{aspect-ratio:16/9}
 .project p{font-size:15px;line-height:1.6}
 .project-index{font-size:12px}
 .project-body:after{content:"View project  ↗";display:block;margin-top:19px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .tags{gap:6px}.tag{font-size:10px;padding:6px 8px}
-.capabilities{background:var(--paper)}
-.capability-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.capability{padding:30px 28px 34px;border-right:1px solid var(--line)}
-.capability:first-child{padding-left:0}.capability:last-child{padding-right:0;border-right:0}
-.capability>span{display:block;margin-bottom:38px;color:var(--olive);font-size:12px;letter-spacing:.14em}
-.capability h3{margin:0 0 13px;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:500;line-height:1.02}
-.capability p{margin:0 0 22px;color:var(--muted);font-size:15px;line-height:1.62}
-.capability small{display:block;color:var(--ink);font-size:12px;line-height:1.7}
+.capabilities{background:var(--ink);color:#fff}
+.capabilities .kicker{color:var(--stone)}
+.capability-grid{display:block;border-top:1px solid rgba(255,255,255,.2);border-bottom:0}
+.capability{display:grid;grid-template-columns:80px minmax(260px,.85fr) minmax(320px,1.15fr);gap:38px;align-items:start;padding:34px 0;border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}
+.capability:first-child,.capability:last-child{padding:34px 0;border-right:0}.capability:last-child{border-bottom:0}
+.capability>span{display:block;margin:0;color:var(--stone);font-size:12px;letter-spacing:.14em}
+.capability h3{margin:-7px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(31px,3vw,42px);font-weight:500;line-height:1}
+.capability p{margin:-3px 0 14px;color:rgba(255,255,255,.66);font-size:15px;line-height:1.62}
+.capability small{display:block;grid-column:3;color:rgba(255,255,255,.78);font-size:12px;line-height:1.7}
 .timeline{padding-left:30px}
 .timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){grid-template-columns:155px minmax(0,1fr);gap:30px;padding-bottom:28px}
 .timeline-item h4{font-size:30px}.timeline-item p{font-size:15px;line-height:1.55}
@@ -485,13 +484,14 @@ body{font-size:16px}
 .contact{padding-top:64px}.contact h2{font-size:clamp(50px,6.4vw,88px)}
 @media (max-width:900px){
  .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
- .capability-grid{grid-template-columns:1fr}.capability,.capability:first-child,.capability:last-child{padding:28px 0;border-right:0;border-bottom:1px solid var(--line)}.capability:last-child{border-bottom:0}.capability>span{margin-bottom:20px}
+ .capability{grid-template-columns:52px 1fr;gap:22px;padding:28px 0}.capability:first-child,.capability:last-child{padding:28px 0}.capability p,.capability small{grid-column:2}.capability h3{margin:-6px 0 0}
 }
 @media (max-width:560px){
  .section{padding:56px 0}.section-head{margin-bottom:26px}.section-intro{font-size:16px}
- .projects-tabs{gap:16px}.archive-link{max-width:130px}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:88vw;min-height:470px}
+ .projects-tabs{gap:16px;flex-wrap:wrap}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:88vw;min-height:470px}
  .compact-tools>div{grid-template-columns:1fr;gap:7px;padding:16px 0}.compact-tools p{font-size:15px}
  .timeline-item h4{font-size:27px}.contact{padding-top:54px}
+ .capability{display:block}.capability>span{margin-bottom:17px}.capability h3{margin:0 0 13px}.capability p,.capability small{margin-left:0}
 }
 </style>
 </head>
@@ -544,7 +544,10 @@ body{font-size:16px}
       </div>
 
       <div class="projects-tabs reveal">
-        <a class="archive-link" href="https://www.behance.net/cindycguzman" target="_blank" rel="noopener">View project archive ↗</a>
+        <div class="tab-group" role="tablist" aria-label="Project categories">
+          <button type="button" class="tab-btn active" data-filter="web-design" role="tab" aria-selected="true">Web Development</button>
+          <button type="button" class="tab-btn" data-filter="ux-ui" role="tab" aria-selected="false">UX/UI Design</button>
+        </div>
         <div class="carousel-nav">
           <button type="button" class="carousel-btn carousel-prev" aria-label="Previous project">←</button>
           <button type="button" class="carousel-btn carousel-next" aria-label="Next project">→</button>

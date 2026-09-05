@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Amino Web</title><desc id="desc">Vista gráfica de identidad para Amino Web.</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9e3ce"/><stop offset="1" stop-color="#6d765c"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#g)"/><circle cx="950" cy="90" r="300" fill="#f7f4eb" opacity=".26"/>
+  <path d="M0 590C220 420 390 650 600 490s390-35 600-210v470H0Z" fill="#20241d" opacity=".9"/>
+  <text x="80" y="315" fill="#20241d" font-family="Georgia,serif" font-size="128">Amino</text>
+  <text x="88" y="380" fill="#20241d" font-family="Arial,sans-serif" font-size="28" letter-spacing="9">WEB · DIGITAL PRODUCT</text>
+</svg>

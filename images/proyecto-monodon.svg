@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Proyecto Monodon</title><desc id="desc">Vista gráfica inspirada en el océano para Proyecto Monodon.</desc>
+  <defs><linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#cbdde0"/><stop offset="1" stop-color="#234750"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#o)"/><path d="M0 470Q210 390 410 490T800 465t400-20v305H0Z" fill="#16343b" opacity=".9"/>
+  <circle cx="980" cy="150" r="86" fill="#f4f0df" opacity=".72"/>
+  <text x="76" y="280" fill="#f7f5ed" font-family="Georgia,serif" font-size="102">Proyecto</text>
+  <text x="76" y="390" fill="#f7f5ed" font-family="Georgia,serif" font-size="132">Monodon</text>
+  <text x="84" y="445" fill="#f7f5ed" font-family="Arial,sans-serif" font-size="25" letter-spacing="8">SCIENCE · SAMANÁ · WEB</text>
+</svg>

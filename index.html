@@ -474,9 +474,13 @@ body{font-size:16px}
 .capability h3{margin:-7px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(31px,3vw,42px);font-weight:500;line-height:1}
 .capability p{margin:-3px 0 14px;color:rgba(255,255,255,.66);font-size:15px;line-height:1.62}
 .capability small{display:block;grid-column:3;color:rgba(255,255,255,.78);font-size:12px;line-height:1.7}
-.timeline{padding-left:30px}
-.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){grid-template-columns:155px minmax(0,1fr);gap:30px;padding-bottom:28px}
-.timeline-item h4{font-size:30px}.timeline-item p{font-size:15px;line-height:1.55}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.timeline:before,.timeline-item:before{display:none}
+.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){display:flex;flex-direction:column;gap:0;min-height:255px;padding:26px 24px 28px;border-right:1px solid var(--line)}
+.timeline-item:first-child{padding-left:0}.timeline-item:last-child{padding-right:0;border-right:0}
+.timeline-item .t-period{margin:0 0 38px}
+.timeline-item h4{margin:0 0 12px;font-size:27px;line-height:1.08}.timeline-item p{margin-top:auto;font-size:15px;line-height:1.55}
+.tools-head{display:block}
 .compact-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .compact-tools>div{display:block;min-height:156px;padding:24px 20px;border-right:1px solid var(--line)}
 .compact-tools>div:first-child{padding-left:0}.compact-tools>div:last-child{padding-right:0;border-right:0}
@@ -486,13 +490,14 @@ body{font-size:16px}
 @media (max-width:900px){
  .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
  .capability{grid-template-columns:52px 1fr;gap:22px;padding:28px 0}.capability:first-child,.capability:last-child{padding:28px 0}.capability p,.capability small{grid-column:2}.capability h3{margin:-6px 0 0}
+ .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){min-height:230px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.timeline-item:nth-child(2n){border-right:0}.timeline-item:nth-last-child(-n+2){border-bottom:0}.timeline-item:first-child{padding-left:0}.timeline-item:nth-child(3){padding-left:0}.timeline-item .t-period{margin-bottom:30px}
  .compact-tools{grid-template-columns:repeat(2,1fr)}.compact-tools>div,.compact-tools>div:first-child,.compact-tools>div:last-child{min-height:132px;padding:22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.compact-tools>div:nth-child(2n){border-right:0}.compact-tools>div:nth-last-child(-n+2){border-bottom:0}.compact-tools>div:last-child{grid-column:1/-1;border-top:1px solid var(--line);border-right:0}.compact-tools span{margin-bottom:22px}
 }
 @media (max-width:560px){
  .section{padding:56px 0}.section-head{margin-bottom:26px}.section-intro{font-size:16px}
  .projects-tabs{gap:16px;flex-wrap:wrap}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:88vw;min-height:470px}
  .compact-tools{grid-template-columns:1fr}.compact-tools>div,.compact-tools>div:first-child,.compact-tools>div:last-child{grid-column:auto;min-height:0;padding:17px 0;border-right:0;border-top:0;border-bottom:1px solid var(--line)}.compact-tools>div:last-child{border-bottom:0}.compact-tools span{margin-bottom:7px}.compact-tools p{font-size:15px}
- .timeline-item h4{font-size:27px}.contact{padding-top:54px}
+ .timeline{grid-template-columns:1fr}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){display:block;min-height:0;padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.timeline-item:last-child{border-bottom:0}.timeline-item .t-period{display:block;margin-bottom:9px}.timeline-item h4{font-size:27px}.timeline-item p{margin-top:0}.contact{padding-top:54px}
  .capability{display:block}.capability>span{margin-bottom:17px}.capability h3{margin:0 0 13px}.capability p,.capability small{margin-left:0}
 }
 </style>
@@ -810,8 +815,7 @@ body{font-size:16px}
 
   <section class="section" id="skills">
     <div class="wrap">
-      <div class="section-head reveal">
-        <div class="kicker">Toolset</div>
+      <div class="section-head tools-head reveal">
         <h2 class="section-title">Selected Tools</h2>
       </div>
       <div class="compact-tools reveal">

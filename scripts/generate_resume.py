@@ -28,7 +28,7 @@ TITLE = "Web Developer & UX/UI Designer"
 CONTACT = "Santo Domingo, Dominican Republic | cindyclaralid@gmail.com | claralid.com | linkedin.com/in/claralid"
 
 SUMMARY = (
-    "Web Developer and UX/UI Designer with experience designing, building and maintaining responsive websites, "
+    "Web Developer and UX/UI Designer with 8+ years of experience designing, building and maintaining responsive websites, "
     "digital platforms and product interfaces. Strong background in WordPress and CMS-based development, supported "
     "by UX research, information architecture, prototyping and front-end fundamentals. Uses AI-assisted development "
     "workflows to move product requirements and interface designs toward tested, functional releases."
@@ -42,10 +42,13 @@ SKILLS = [
 ]
 
 EXPERIENCE = [
-    ("Content & Publications", "UNPHU", "Current", "Support content, publications and digital work across institutional platforms in a university environment."),
-    ("Web Developer", "Behealth PR", "Jun 2022 – Present", "Build, update and maintain production websites for a Puerto Rico-based healthcare client, improving content delivery, usability and day-to-day reliability."),
+    ("Digital Content & Publications Coordinator", "UNPHU", "Aug 2025 – Present", "Coordinate websites, applications, digital content and publications for the Vice-Rectorate of Research, Extension and Internationalization Projects across institutional platforms."),
+    ("UX & Editorial Designer, Academic Journal", "UNPHU", "Oct 2023 – Present", "Lead UX and editorial design for the Journal of Sciences and Humanities, shaping web presentation and reader experience for peer-reviewed content."),
+    ("UX/UI Designer (Contract)", "ICQ24 Inc.", "Apr 2023 – May 2024", "Delivered UX/UI design for the Cervecería Nacional Dominicana account, translating business and user needs into clear, usable interfaces with a multidisciplinary, multinational team."),
+    ("Web Developer", "Behealth PR", "Jun 2022 – Aug 2024", "Built, updated and maintained production websites for a Puerto Rico-based healthcare client, improving content delivery, usability and day-to-day reliability."),
     ("UX/UI Designer (Temporary Project)", "Cervecería Nacional Dominicana", "Sep 2022 – Feb 2023", "Translated business and user needs into clear, usable interfaces while collaborating with a multidisciplinary, multinational team."),
-    ("Web Developer & Web Department Coordinator", "Gmedia Dominicana", "Aug 2019 – Nov 2021", "Coordinated web production and built and maintained WordPress, Joomla and Shopify websites for multiple clients."),
+    ("Web Department Coordinator", "Gmedia Dominicana", "Aug 2019 – Nov 2021", "Coordinated web production, client relationships and a small team; built and maintained WordPress, Joomla and Shopify websites for multiple clients."),
+    ("Web Page & Graphic Designer", "Zagirova Design", "Apr 2017 – Jul 2019", "Designed and built WordPress and Joomla websites with WooCommerce, SEO and Elementor, alongside graphic design and social media assets."),
 ]
 
 PROJECTS = [

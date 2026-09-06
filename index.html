@@ -496,19 +496,23 @@ body{font-size:16px}
 .tools-track .skill-card.other-tools .skill-note{margin:0 0 18px}
 .tools-nav{display:flex;gap:9px}
 .contact{padding-top:64px}.contact h2{font-size:clamp(50px,6.4vw,88px)}
-.education-card{display:grid;grid-template-columns:170px minmax(0,1fr);gap:54px;align-items:start;padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.education-card{display:grid;grid-template-columns:170px minmax(0,1fr) minmax(260px,.72fr);gap:54px;align-items:center;padding:38px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .education-mark{color:var(--olive);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 .education-content h3{max-width:760px;margin:-8px 0 14px;font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(34px,4vw,52px);font-weight:500;line-height:1;letter-spacing:-.025em}
 .education-content p{max-width:760px;margin:0;color:var(--muted);font-size:16px;line-height:1.68}
 .education-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .education-meta span,.education-meta a{padding:8px 11px;border:1px solid var(--line);border-radius:999px;color:var(--olive);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
 .education-meta a:hover{background:var(--olive);border-color:var(--olive);color:#fff}
+.education-image{display:block;aspect-ratio:1.17/1;overflow:hidden;border-radius:18px;background:var(--ivory)}
+.education-image img{width:100%;height:100%;display:block;object-fit:cover}
+.experience-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--olive);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.experience-link:hover{text-decoration:underline;text-underline-offset:4px}
 @media (max-width:900px){
  .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
  .capability{grid-template-columns:52px 1fr;gap:22px;padding:28px 0}.capability:first-child,.capability:last-child{padding:28px 0}.capability p,.capability small{grid-column:2}.capability h3{margin:-6px 0 0}
  .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){min-height:230px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.timeline-item:nth-child(2n){border-right:0}.timeline-item:nth-last-child(-n+2){border-bottom:0}.timeline-item:first-child{padding-left:0}.timeline-item:nth-child(3){padding-left:0}.timeline-item .t-period{margin-bottom:30px}
  .tools-track .skill-card,.tools-track .skill-card:first-child,.tools-track .skill-card:last-child,.tools-track .skill-card.other-tools{flex-basis:62%;min-height:330px;padding:27px!important}
- .education-card{grid-template-columns:1fr;gap:24px}
+ .education-card{grid-template-columns:1fr;gap:24px}.education-image{width:min(100%,560px);aspect-ratio:16/9}
 }
 @media (max-width:560px){
  .section{padding:56px 0}.section-head{margin-bottom:26px}.section-intro{font-size:16px}
@@ -820,6 +824,7 @@ body{font-size:16px}
           <div>
             <h4>Digital Content &amp; Publications Coordinator · UNPHU</h4>
             <p>Coordinate websites, applications, digital content and publications for the Research Directorate.</p>
+            <a class="experience-link" href="https://unphu.edu.do/" target="_blank" rel="noopener noreferrer">Visit UNPHU ↗</a>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -827,6 +832,7 @@ body{font-size:16px}
           <div>
             <h4>UX &amp; Editorial Designer, Academic Journal · UNPHU</h4>
             <p>Lead UX and editorial design for the Journal of Sciences and Humanities, improving the web presentation and reading experience of peer-reviewed content.</p>
+            <a class="experience-link" href="https://unphu.edu.do/" target="_blank" rel="noopener noreferrer">Visit UNPHU ↗</a>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -834,6 +840,7 @@ body{font-size:16px}
           <div>
             <h4>UX/UI Designer, Contract · ICQ24 Inc.</h4>
             <p>Delivered UX/UI design for the Cervecería Nacional Dominicana account with a multidisciplinary, multinational team.</p>
+            <a class="experience-link" href="https://www.icq24.com/" target="_blank" rel="noopener noreferrer">Visit ICQ24 ↗</a>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -841,6 +848,7 @@ body{font-size:16px}
           <div>
             <h4>Web Developer · Behealth PR</h4>
             <p>Built, updated and maintained production websites for a Puerto Rico-based healthcare client.</p>
+            <a class="experience-link" href="https://www.behealthpr.com/" target="_blank" rel="noopener noreferrer">Visit BeHealth ↗</a>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -848,6 +856,7 @@ body{font-size:16px}
           <div>
             <h4>UX/UI Designer, Temporary Project · Cervecería Nacional Dominicana</h4>
             <p>Designed interfaces and contributed to design-system guidelines with a focus on usability and visual consistency.</p>
+            <a class="experience-link" href="https://www.cnd.com.do/" target="_blank" rel="noopener noreferrer">Visit CND ↗</a>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -855,6 +864,7 @@ body{font-size:16px}
           <div>
             <h4>Web Department Coordinator · Gmedia Dominicana</h4>
             <p>Coordinated web production, client relationships and a small team while building and maintaining CMS websites.</p>
+            <a class="experience-link" href="https://gmedia.do/" target="_blank" rel="noopener noreferrer">Visit Gmedia ↗</a>
           </div>
         </div>
         <div class="timeline-item reveal">
@@ -862,6 +872,7 @@ body{font-size:16px}
           <div>
             <h4>Web Page &amp; Graphic Designer · Zagirova Design</h4>
             <p>Designed and built WordPress and Joomla websites alongside graphic design and social media assets.</p>
+            <a class="experience-link" href="https://zagirova.com/" target="_blank" rel="noopener noreferrer">Visit Zagirova ↗</a>
           </div>
         </div>
       </div>
@@ -882,6 +893,9 @@ body{font-size:16px}
             <a href="https://educapermanente.itla.edu.do/" target="_blank" rel="noopener noreferrer">ITLA Continuing Education ↗</a>
           </div>
         </div>
+        <a class="education-image" href="https://www.itla.edu.do/" target="_blank" rel="noopener noreferrer" aria-label="Visit the official ITLA website">
+          <img src="images/itla-campus.jpg" alt="Main ITLA campus building in La Caleta" loading="lazy">
+        </a>
       </div>
     </div>
   </section>

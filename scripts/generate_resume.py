@@ -42,7 +42,7 @@ SKILLS = [
 ]
 
 EXPERIENCE = [
-    ("Digital Content & Publications Coordinator", "UNPHU", "Aug 2025 – Present", "Coordinate websites, applications, digital content and publications for the Vice-Rectorate of Research, Extension and Internationalization Projects across institutional platforms."),
+    ("Digital Content & Publications Coordinator", "UNPHU", "Aug 2025 – Present", "Coordinate websites, applications, digital content and publications for the Research Directorate across institutional platforms."),
     ("UX & Editorial Designer, Academic Journal", "UNPHU", "Oct 2023 – Present", "Lead UX and editorial design for the Journal of Sciences and Humanities, shaping web presentation and reader experience for peer-reviewed content."),
     ("UX/UI Designer (Contract)", "ICQ24 Inc.", "Apr 2023 – May 2024", "Delivered UX/UI design for the Cervecería Nacional Dominicana account, translating business and user needs into clear, usable interfaces with a multidisciplinary, multinational team."),
     ("Web Developer", "Behealth PR", "Jun 2022 – Aug 2024", "Built, updated and maintained production websites for a Puerto Rico-based healthcare client, improving content delivery, usability and day-to-day reliability."),

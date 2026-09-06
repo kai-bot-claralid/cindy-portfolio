@@ -142,7 +142,7 @@ def build_pdf():
     doc = SimpleDocTemplate(
         str(out), pagesize=LETTER,
         rightMargin=0.58 * inch, leftMargin=0.58 * inch,
-        topMargin=0.48 * inch, bottomMargin=0.48 * inch,
+        topMargin=0.38 * inch, bottomMargin=0.38 * inch,
         title=f"{NAME} — ATS Resume", author=NAME,
     )
     olive = colors.HexColor("#4B503E")
@@ -150,8 +150,8 @@ def build_pdf():
     name_style = ParagraphStyle("Name", parent=styles["Heading1"], fontName="Helvetica-Bold", fontSize=20, leading=22, alignment=TA_CENTER, spaceAfter=2)
     title_style = ParagraphStyle("Title", parent=styles["Normal"], fontName="Helvetica-Bold", fontSize=10.5, leading=13, alignment=TA_CENTER, spaceAfter=2)
     contact_style = ParagraphStyle("Contact", parent=styles["Normal"], fontName="Helvetica", fontSize=8.2, leading=11, alignment=TA_CENTER, spaceAfter=7)
-    section_style = ParagraphStyle("Section", parent=styles["Heading2"], fontName="Helvetica-Bold", fontSize=9.5, leading=12, textColor=olive, spaceBefore=6, spaceAfter=2, borderWidth=0, uppercase=True)
-    body = ParagraphStyle("Body", parent=styles["BodyText"], fontName="Helvetica", fontSize=8.5, leading=10.8, spaceAfter=2)
+    section_style = ParagraphStyle("Section", parent=styles["Heading2"], fontName="Helvetica-Bold", fontSize=9.3, leading=11, textColor=olive, spaceBefore=4, spaceAfter=1.5, borderWidth=0, uppercase=True)
+    body = ParagraphStyle("Body", parent=styles["BodyText"], fontName="Helvetica", fontSize=8.2, leading=9.7, spaceAfter=1.5)
     indented = ParagraphStyle("Indented", parent=body, leftIndent=9)
 
     story = [Paragraph(NAME, name_style), Paragraph(TITLE, title_style), Paragraph(CONTACT, contact_style)]

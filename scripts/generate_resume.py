@@ -57,7 +57,7 @@ PROJECTS = [
     ("UNPHU | Institutional Website", "UX/UI Research, Interface Design, Collaboration", "Contributed research-informed interface work within an established institutional ecosystem and multidisciplinary team. | unphu.edu.do"),
 ]
 
-EDUCATION = "Multimedia Studies | ITLA Continuing Education"
+EDUCATION = "Multimedia Technology | Instituto Tecnológico de las Américas (ITLA)"
 
 
 def build_docx():

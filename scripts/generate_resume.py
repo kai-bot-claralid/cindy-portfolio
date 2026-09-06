@@ -44,7 +44,7 @@ SKILLS = [
 EXPERIENCE = [
     ("Content & Publications", "UNPHU", "Current", "Support content, publications and digital work across institutional platforms in a university environment."),
     ("Web Developer", "Behealth PR", "Jun 2022 – Present", "Build, update and maintain production websites for a Puerto Rico-based healthcare client, improving content delivery, usability and day-to-day reliability."),
-    ("UX/UI Designer", "Cervecería Nacional Dominicana", "Sep 2022 – Feb 2023", "Translated business and user needs into clear, usable interfaces while collaborating with a multidisciplinary, multinational team."),
+    ("UX/UI Designer (Temporary Project)", "Cervecería Nacional Dominicana", "Sep 2022 – Feb 2023", "Translated business and user needs into clear, usable interfaces while collaborating with a multidisciplinary, multinational team."),
     ("Web Developer & Web Department Coordinator", "Gmedia Dominicana", "Aug 2019 – Nov 2021", "Coordinated web production and built and maintained WordPress, Joomla and Shopify websites for multiple clients."),
 ]
 

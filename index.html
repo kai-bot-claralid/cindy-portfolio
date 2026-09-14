@@ -506,12 +506,22 @@ body{font-size:16px}
 .education-image img{width:100%;height:100%;display:block;object-fit:cover}
 .experience-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--olive);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .experience-link:hover{text-decoration:underline;text-underline-offset:4px}
+.brand-wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.brand-logo{min-height:150px;display:flex;align-items:center;justify-content:center;gap:14px;padding:28px;background:rgba(250,250,248,.6);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .22s ease,transform .22s ease}
+.brand-logo:hover{background:var(--ivory);transform:translateY(-2px)}
+.brand-logo img{width:54px;height:54px;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter .22s ease,opacity .22s ease}
+.brand-logo:hover img{filter:none;opacity:1}
+.brand-logo span{font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;font-weight:500;line-height:1.05}
+.experience-heading{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.experience-heading img{flex:0 0 auto;width:38px;height:38px;padding:5px;object-fit:contain;background:#fff;border:1px solid var(--soft-line);border-radius:9px;filter:grayscale(1);opacity:.8}
+.experience-heading h4{margin:0!important}
 @media (max-width:900px){
  .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
  .capability{grid-template-columns:52px 1fr;gap:22px;padding:28px 0}.capability:first-child,.capability:last-child{padding:28px 0}.capability p,.capability small{grid-column:2}.capability h3{margin:-6px 0 0}
  .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){min-height:230px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.timeline-item:nth-child(2n){border-right:0}.timeline-item:nth-last-child(-n+2){border-bottom:0}.timeline-item:first-child{padding-left:0}.timeline-item:nth-child(3){padding-left:0}.timeline-item .t-period{margin-bottom:30px}
  .tools-track .skill-card,.tools-track .skill-card:first-child,.tools-track .skill-card:last-child,.tools-track .skill-card.other-tools{flex-basis:62%;min-height:330px;padding:27px!important}
  .education-card{grid-template-columns:1fr;gap:24px}.education-image{width:min(100%,560px);aspect-ratio:16/9}
+ .brand-wall{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:560px){
  .section{padding:56px 0}.section-head{margin-bottom:26px}.section-intro{font-size:16px}
@@ -521,6 +531,7 @@ body{font-size:16px}
  .capability{display:block}.capability>span{margin-bottom:17px}.capability h3{margin:0 0 13px}.capability p,.capability small{margin-left:0}
  .education-content h3{margin:0;font-size:36px}.education-content p{font-size:15px}
  .tab-group{width:100%;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding-bottom:5px}.tab-group::-webkit-scrollbar{display:none}.tab-btn{flex:0 0 auto;scroll-snap-align:start}.carousel-nav{margin-left:auto}
+ .brand-wall{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-logo{min-height:126px;flex-direction:column;padding:20px;text-align:center}.brand-logo img{width:44px;height:44px}.brand-logo span{font-size:19px}
 }
 </style>
 </head>
@@ -755,6 +766,28 @@ body{font-size:16px}
     </div>
   </section>
 
+  <section class="section" id="brands">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Selected collaborations</div>
+        <h2 class="section-title">Brands &amp; organizations I’ve worked with.</h2>
+        <p class="section-intro">A selection of companies and institutions whose websites or digital experiences I have built or helped shape.</p>
+      </div>
+      <div class="brand-wall reveal">
+        <a class="brand-logo" href="https://unphu.edu.do/" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=unphu.edu.do&amp;sz=128" alt="UNPHU logo" loading="lazy"><span>UNPHU</span></a>
+        <a class="brand-logo" href="https://www.icq24.com/" target="_blank" rel="noopener noreferrer"><img src="https://www.icq24.com/web/image/website/5/logo/ICQ24%20Oficial%20WebSite?unique=d3a9401" alt="ICQ24 logo" loading="lazy"><span>ICQ24</span></a>
+        <a class="brand-logo" href="https://www.behealthpr.com/" target="_blank" rel="noopener noreferrer"><img src="https://www.behealthpr.com/wp-content/uploads/2025/02/logo-Behealth-verde.png" alt="BeHealth logo" loading="lazy"><span>BeHealth</span></a>
+        <a class="brand-logo" href="https://www.cnd.com.do/" target="_blank" rel="noopener noreferrer"><img src="https://www.cnd.com.do/sites/g/files/seuoyk1301/files/logo-cnd.png" alt="Cervecería Nacional Dominicana logo" loading="lazy"><span>Cervecería Nacional Dominicana</span></a>
+        <a class="brand-logo" href="https://gmedia.do/" target="_blank" rel="noopener noreferrer"><img src="https://gmedia.do/wp-content/uploads/Logo-Gmedia-.png" alt="Gmedia logo" loading="lazy"><span>Gmedia</span></a>
+        <a class="brand-logo" href="https://zagirova.com/" target="_blank" rel="noopener noreferrer"><img src="https://zagirova.com/logo/zagirova-logo-dark.svg" alt="Zagirova Design logo" loading="lazy"><span>Zagirova Design</span></a>
+        <a class="brand-logo" href="https://casagrande.com.do/" target="_blank" rel="noopener noreferrer"><img src="https://casagrande.com.do/wp-content/uploads/2025/05/LOGO-CASA-GRANDE-19-e1753320735264.png" alt="Casa Grande logo" loading="lazy"><span>Casa Grande</span></a>
+        <a class="brand-logo" href="https://dialog-one.com/" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=dialog-one.com&amp;sz=128" alt="Dialog One logo" loading="lazy"><span>Dialog One</span></a>
+        <a class="brand-logo" href="https://naturaeco.fr/" target="_blank" rel="noopener noreferrer"><img src="https://www.google.com/s2/favicons?domain=naturaeco.fr&amp;sz=128" alt="Natura Eco logo" loading="lazy"><span>Natura Eco</span></a>
+        <a class="brand-logo" href="https://www.itla.edu.do/" target="_blank" rel="noopener noreferrer"><img src="https://itla.edu.do/wp-content/uploads/2026/05/web-app-manifest-192x192-1.png" alt="ITLA logo" loading="lazy"><span>ITLA</span></a>
+      </div>
+    </div>
+  </section>
+
   <section class="section capabilities" id="capabilities">
     <div class="wrap">
       <div class="section-head reveal">
@@ -801,7 +834,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Aug 2025 — Present</span>
           <div>
-            <h4>Digital Content &amp; Publications Coordinator · UNPHU</h4>
+            <div class="experience-heading"><img src="https://www.google.com/s2/favicons?domain=unphu.edu.do&amp;sz=128" alt="UNPHU logo" loading="lazy"><h4>Digital Content &amp; Publications Coordinator · UNPHU</h4></div>
             <p>Coordinate websites, applications, digital content and publications for the Research Directorate.</p>
             <a class="experience-link" href="https://unphu.edu.do/" target="_blank" rel="noopener noreferrer">Visit UNPHU ↗</a>
           </div>
@@ -809,7 +842,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Oct 2023 — Present</span>
           <div>
-            <h4>UX &amp; Editorial Designer, Academic Journal · UNPHU</h4>
+            <div class="experience-heading"><img src="https://www.google.com/s2/favicons?domain=unphu.edu.do&amp;sz=128" alt="UNPHU logo" loading="lazy"><h4>UX &amp; Editorial Designer, Academic Journal · UNPHU</h4></div>
             <p>Lead UX and editorial design for the Journal of Sciences and Humanities, improving the web presentation and reading experience of peer-reviewed content.</p>
             <a class="experience-link" href="https://unphu.edu.do/" target="_blank" rel="noopener noreferrer">Visit UNPHU ↗</a>
           </div>
@@ -817,7 +850,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Apr 2023 — May 2024</span>
           <div>
-            <h4>UX/UI Designer, Contract · ICQ24 Inc.</h4>
+            <div class="experience-heading"><img src="https://www.icq24.com/web/image/website/5/logo/ICQ24%20Oficial%20WebSite?unique=d3a9401" alt="ICQ24 logo" loading="lazy"><h4>UX/UI Designer, Contract · ICQ24 Inc.</h4></div>
             <p>Delivered UX/UI design for the Cervecería Nacional Dominicana account with a multidisciplinary, multinational team.</p>
             <a class="experience-link" href="https://www.icq24.com/" target="_blank" rel="noopener noreferrer">Visit ICQ24 ↗</a>
           </div>
@@ -825,7 +858,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Jun 2022 — Aug 2024</span>
           <div>
-            <h4>Web Developer · Behealth PR</h4>
+            <div class="experience-heading"><img src="https://www.behealthpr.com/wp-content/uploads/2025/02/logo-Behealth-verde.png" alt="BeHealth logo" loading="lazy"><h4>Web Developer · Behealth PR</h4></div>
             <p>Built, updated and maintained production websites for a Puerto Rico-based healthcare client.</p>
             <a class="experience-link" href="https://www.behealthpr.com/" target="_blank" rel="noopener noreferrer">Visit BeHealth ↗</a>
           </div>
@@ -833,7 +866,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Sep 2022 — Feb 2023</span>
           <div>
-            <h4>UX/UI Designer, Temporary Project · Cervecería Nacional Dominicana</h4>
+            <div class="experience-heading"><img src="https://www.cnd.com.do/sites/g/files/seuoyk1301/files/logo-cnd.png" alt="Cervecería Nacional Dominicana logo" loading="lazy"><h4>UX/UI Designer, Temporary Project · Cervecería Nacional Dominicana</h4></div>
             <p>Designed interfaces and contributed to design-system guidelines with a focus on usability and visual consistency.</p>
             <a class="experience-link" href="https://www.cnd.com.do/" target="_blank" rel="noopener noreferrer">Visit CND ↗</a>
           </div>
@@ -841,7 +874,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Aug 2019 — Nov 2021</span>
           <div>
-            <h4>Web Department Coordinator · Gmedia Dominicana</h4>
+            <div class="experience-heading"><img src="https://gmedia.do/wp-content/uploads/Logo-Gmedia-.png" alt="Gmedia logo" loading="lazy"><h4>Web Department Coordinator · Gmedia Dominicana</h4></div>
             <p>Coordinated web production, client relationships and a small team while building and maintaining CMS websites.</p>
             <a class="experience-link" href="https://gmedia.do/" target="_blank" rel="noopener noreferrer">Visit Gmedia ↗</a>
           </div>
@@ -849,7 +882,7 @@ body{font-size:16px}
         <div class="timeline-item reveal">
           <span class="t-period">Apr 2017 — Jul 2019</span>
           <div>
-            <h4>Web Page &amp; Graphic Designer · Zagirova Design</h4>
+            <div class="experience-heading"><img src="https://zagirova.com/logo/zagirova-logo-dark.svg" alt="Zagirova Design logo" loading="lazy"><h4>Web Page &amp; Graphic Designer · Zagirova Design</h4></div>
             <p>Designed and built WordPress and Joomla websites alongside graphic design and social media assets.</p>
             <a class="experience-link" href="https://zagirova.com/" target="_blank" rel="noopener noreferrer">Visit Zagirova ↗</a>
           </div>

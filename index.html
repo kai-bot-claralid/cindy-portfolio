@@ -47,7 +47,8 @@ nav{
 .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
 .brand{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:650}
 .nav-links{display:flex;gap:28px;align-items:center;font-size:13px;color:var(--muted)}
-.language-switch{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px}
+.language-switch{display:flex;align-items:center;gap:2px;padding:3px 3px 3px 10px;border:1px solid var(--line);border-radius:999px;background:var(--paper);box-shadow:0 5px 16px rgba(30,30,30,.06)}
+.language-label{margin-right:4px;font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--muted)}
 .language-switch a{padding:6px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
 .language-switch a.active{background:var(--ink);color:#fff}
 .nav-links a{transition:color .2s ease}.nav-links a:hover{color:var(--ink)}
@@ -566,6 +567,7 @@ body{font-size:16px}
       <a href="#capabilities">Capabilities</a>
       <a href="#experience">Experience</a>
       <div class="language-switch" aria-label="Language selector">
+        <span class="language-label">🌐 Language</span>
         <a href="?lang=es" data-lang="es" lang="es">ES</a>
         <a href="?lang=en" data-lang="en" lang="en">EN</a>
       </div>
@@ -1029,7 +1031,7 @@ body{font-size:16px}
 
 <script>
 const translations={
-  "Work":"Proyectos","Capabilities":"Capacidades","Experience":"Experiencia","Contact ↗":"Contacto ↗",
+  "Work":"Proyectos","Capabilities":"Capacidades","Experience":"Experiencia","Contact ↗":"Contacto ↗","🌐 Language":"🌐 Idioma",
   "Web Developer · UX/UI Designer":"Desarrolladora web · Diseñadora UX/UI",
   "Web Developer &":"Desarrolladora web y","UX/UI Designer.":"diseñadora UX/UI.",
   "Web Development · UX/UI Design · AI-Integrated Workflow":"Desarrollo web · Diseño UX/UI · Flujo de trabajo integrado con IA",

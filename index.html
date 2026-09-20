@@ -1102,7 +1102,7 @@ document.querySelectorAll('.language-switch a').forEach(link=>link.classList.tog
 if(currentLang==='es'){
   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
   const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
-  nodes.forEach(node=>{const value=node.nodeValue.trim();if(translations[value]) node.nodeValue=node.nodeValue.replace(value,translations[value]);});
+  nodes.forEach(node=>{const value=node.nodeValue.replace(/\s+/g,' ').trim();if(translations[value]) node.nodeValue=` ${translations[value]} `;});
   document.querySelectorAll('[aria-label],[alt]').forEach(el=>['aria-label','alt'].forEach(attr=>{const value=el.getAttribute(attr);if(value&&translations[value]) el.setAttribute(attr,translations[value]);}));
 }
 

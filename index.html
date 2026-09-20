@@ -365,8 +365,22 @@ footer{background:var(--ink);color:rgba(255,255,255,.38);padding:48px 0 36px}
 .projects-tabs{position:static;width:auto;max-width:none;margin:0 0 25px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none}
 .tab-group{display:flex;gap:5px;padding:5px;background:rgba(90,97,76,.08);border-radius:999px}
 .tab-btn{border:0;padding:11px 18px}
-.carousel-nav{display:flex;gap:9px}
-.carousel-btn{background:var(--paper);border-color:var(--line)}
+.carousel-nav{
+  position:absolute;inset:0 -20px 18px;z-index:8;
+  display:flex;align-items:center;justify-content:space-between;
+  pointer-events:none
+}
+.carousel-btn{background:rgba(250,250,248,.92);border-color:var(--line)}
+.project-carousel>.carousel-nav .carousel-btn{
+  width:50px;height:50px;pointer-events:auto;
+  opacity:0;transform:scale(.88);
+  box-shadow:0 12px 34px rgba(30,30,30,.16);
+  backdrop-filter:blur(12px);
+  transition:opacity .22s ease,transform .22s ease,background .2s ease,color .2s ease
+}
+.project-carousel:hover>.carousel-nav .carousel-btn,
+.project-carousel:focus-within>.carousel-nav .carousel-btn{opacity:1;transform:scale(1)}
+.project-carousel>.carousel-nav .carousel-btn:hover{transform:scale(1.06)}
 .project-carousel{overflow:visible}
 .projects-track{display:flex;gap:20px;overflow-x:auto;padding:6px 2px 22px;scroll-snap-type:x mandatory}
 .project,.project:nth-child(4n+2),.project:nth-child(4n+3){flex:0 0 calc((100% - 40px)/3);min-height:490px;margin:0;padding:18px;border-radius:18px;border:1px solid var(--soft-line);box-shadow:0 12px 34px rgba(30,30,30,.05);overflow:hidden}
@@ -521,6 +535,7 @@ body{font-size:16px}
 .experience-heading h4{margin:0!important}
 @media (max-width:900px){
  .section{padding:66px 0}.project,.project:nth-child(4n+2),.project:nth-child(4n+3),.project:first-child{flex-basis:62%;min-height:500px}
+ .carousel-nav{inset:0 8px 18px}.project-carousel>.carousel-nav .carousel-btn{opacity:1;transform:scale(1);width:46px;height:46px}
  .capability{grid-template-columns:52px 1fr;gap:22px;padding:28px 0}.capability:first-child,.capability:last-child{padding:28px 0}.capability p,.capability small{grid-column:2}.capability h3{margin:-6px 0 0}
  .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){min-height:230px;padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.timeline-item:nth-child(2n){border-right:0}.timeline-item:nth-last-child(-n+2){border-bottom:0}.timeline-item:first-child{padding-left:0}.timeline-item:nth-child(3){padding-left:0}.timeline-item .t-period{margin-bottom:30px}
  .tools-track .skill-card,.tools-track .skill-card:first-child,.tools-track .skill-card:last-child,.tools-track .skill-card.other-tools{flex-basis:62%;min-height:330px;padding:27px!important}
@@ -534,7 +549,7 @@ body{font-size:16px}
  .timeline{grid-template-columns:1fr}.timeline-item,.timeline-item:nth-child(2n),.timeline-item:nth-last-child(-n+2){display:block;min-height:0;padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.timeline-item:last-child{border-bottom:0}.timeline-item .t-period{display:block;margin-bottom:9px}.timeline-item h4{font-size:27px}.timeline-item p{margin-top:0}.contact{padding-top:54px}
  .capability{display:block}.capability>span{margin-bottom:17px}.capability h3{margin:0 0 13px}.capability p,.capability small{margin-left:0}
  .education-content h3{margin:0;font-size:36px}.education-content p{font-size:15px}
- .tab-group{width:100%;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding-bottom:5px}.tab-group::-webkit-scrollbar{display:none}.tab-btn{flex:0 0 auto;scroll-snap-align:start}.carousel-nav{margin-left:auto}
+ .tab-group{width:100%;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;padding-bottom:5px}.tab-group::-webkit-scrollbar{display:none}.tab-btn{flex:0 0 auto;scroll-snap-align:start}
  .brand-wall{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-logo{min-height:126px;flex-direction:column;padding:20px;text-align:center}.brand-logo img{width:44px;height:44px}.brand-logo span{font-size:19px}
 }
 </style>
@@ -547,7 +562,7 @@ body{font-size:16px}
       <a href="#work">Work</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#experience">Experience</a>
-      <a class="nav-cta" href="#contact">Contact ↗</a>
+      <a class="nav-cta" href="https://wa.me/18297968930?text=Hola%20Cindy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener" aria-label="Contact Cindy on WhatsApp">Contact ↗</a>
     </div>
   </div>
 </nav>
@@ -613,13 +628,13 @@ body{font-size:16px}
           <button type="button" class="tab-btn" data-filter="ux-ui" role="tab" aria-selected="false" aria-controls="project-list">UX/UI</button>
           <button type="button" class="tab-btn" data-filter="digital-products" role="tab" aria-selected="false" aria-controls="project-list">Digital Products</button>
         </div>
-        <div class="carousel-nav">
-          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous project">←</button>
-          <button type="button" class="carousel-btn carousel-next" aria-label="Next project">→</button>
-        </div>
       </div>
 
       <div class="project-carousel reveal">
+        <div class="carousel-nav" aria-label="Project carousel controls">
+          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous project">←</button>
+          <button type="button" class="carousel-btn carousel-next" aria-label="Next project">→</button>
+        </div>
         <div class="projects-track" id="project-list">
           <a class="project olive" data-category="web-design ux-ui digital-products" href="https://aminoweb.com/" target="_blank" rel="noopener">
             <div class="project-media"><img src="images/amino-web-homepage.jpg" alt="Amino Web homepage preview" loading="lazy" width="1920" height="827"></div>
@@ -988,8 +1003,9 @@ body{font-size:16px}
       <div class="contact-side reveal">
         <p>Web Development · UX/UI · Digital Products</p>
         <div class="socials">
+          <a href="https://wa.me/18297968930?text=Hola%20Cindy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener"><span>WhatsApp</span><span>↗</span></a>
           <a href="https://www.linkedin.com/in/claralid/" target="_blank" rel="noopener"><span>LinkedIn</span><span>↗</span></a>
-          <a href="mailto:cindyclaralid@gmail.com"><span>Email</span><span>↗</span></a>
+          <a href="mailto:cindyclaralid@gmail.com?subject=Contacto%20desde%20tu%20portafolio"><span>Email</span><span>↗</span></a>
           <a href="resume/Cindy-Guzman-ATS-Resume.pdf" download><span>Download résumé</span><span>↓</span></a>
         </div>
       </div>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Cindy Guzmán — Web Developer &amp; UX/UI Designer. Selected digital products, web experiences and UX/UI work.">
-<title>Cindy Guzmán — Web Developer &amp; UX/UI Designer</title>
+<meta name="description" content="Cindy Guzmán — Desarrolladora web y diseñadora UX/UI. Productos digitales, experiencias web y proyectos UX/UI destacados.">
+<title>Cindy Guzmán — Desarrolladora web y diseñadora UX/UI</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,9 @@ nav{
 .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
 .brand{font-size:14px;letter-spacing:.16em;text-transform:uppercase;font-weight:650}
 .nav-links{display:flex;gap:28px;align-items:center;font-size:13px;color:var(--muted)}
+.language-switch{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px}
+.language-switch a{padding:6px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
+.language-switch a.active{background:var(--ink);color:#fff}
 .nav-links a{transition:color .2s ease}.nav-links a:hover{color:var(--ink)}
 .nav-cta{border:1px solid var(--line);padding:10px 15px;border-radius:999px;color:var(--ink)!important}
 .hero{
@@ -562,6 +565,10 @@ body{font-size:16px}
       <a href="#work">Work</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#experience">Experience</a>
+      <div class="language-switch" aria-label="Language selector">
+        <a href="?lang=es" data-lang="es" lang="es">ES</a>
+        <a href="?lang=en" data-lang="en" lang="en">EN</a>
+      </div>
       <a class="nav-cta" href="https://wa.me/18297968930?text=Hola%20Cindy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener" aria-label="Contact Cindy on WhatsApp">Contact ↗</a>
     </div>
   </div>
@@ -1021,6 +1028,72 @@ body{font-size:16px}
 </footer>
 
 <script>
+const translations={
+  "Work":"Proyectos","Capabilities":"Capacidades","Experience":"Experiencia","Contact ↗":"Contacto ↗",
+  "Web Developer · UX/UI Designer":"Desarrolladora web · Diseñadora UX/UI",
+  "Web Developer &":"Desarrolladora web y","UX/UI Designer.":"diseñadora UX/UI.",
+  "Web Development · UX/UI Design · AI-Integrated Workflow":"Desarrollo web · Diseño UX/UI · Flujo de trabajo integrado con IA",
+  "View selected work":"Ver proyectos destacados","Download résumé ↓":"Descargar currículum ↓",
+  "About":"Sobre mí","From visual design to complete digital product experiences.":"Del diseño visual a experiencias digitales completas.",
+  "I’m a Web Developer and UX/UI Designer with 8+ years of experience creating websites, interfaces and digital products.":"Soy desarrolladora web y diseñadora UX/UI con más de 8 años de experiencia creando sitios web, interfaces y productos digitales.",
+  "My career began in graphic design, where I developed a strong foundation in visual communication, composition and brand consistency. I then specialized in building and maintaining websites with CMS platforms such as WordPress, Joomla and Shopify.":"Mi carrera comenzó en el diseño gráfico, donde desarrollé una base sólida en comunicación visual, composición y coherencia de marca. Luego me especialicé en crear y mantener sitios web con CMS como WordPress, Joomla y Shopify.",
+  "As my work evolved, I incorporated UX research, information architecture, prototyping and interface design. Today, I integrate AI throughout my workflow—from research and ideation to content, design, development, debugging, testing and iteration.":"A medida que mi trabajo evolucionó, incorporé investigación UX, arquitectura de información, prototipado y diseño de interfaces. Hoy integro la IA en todo mi flujo de trabajo: desde la investigación y la ideación hasta el contenido, el diseño, el desarrollo, la depuración, las pruebas y la iteración.",
+  "Selected work":"Proyectos destacados","Selected Work":"Proyectos destacados","A selection of digital products, interfaces and web experiences.":"Una selección de productos digitales, interfaces y experiencias web.",
+  "Featured Work":"Destacados","Web & CMS":"Web y CMS","Digital Products":"Productos digitales",
+  "Digital Product · Web Platform":"Producto digital · Plataforma web","Accessible Digital Product":"Producto digital accesible","04 · Event experience":"04 · Experiencia para eventos","05 · Research microsite":"05 · Micrositio de investigación",
+  "Designed and launched a functional platform for creating microsites and link-based digital spaces, from strategy and UX/UI through AI-assisted development, testing and deployment.":"Diseñé y lancé una plataforma funcional para crear micrositios y espacios digitales basados en enlaces, desde la estrategia y el UX/UI hasta el desarrollo asistido por IA, las pruebas y el despliegue.",
+  "Designed and developed a calmer, accessible digital experience that turns everyday guidance into clear, easy-to-follow steps.":"Diseñé y desarrollé una experiencia digital accesible y más tranquila que convierte orientaciones cotidianas en pasos claros y fáciles de seguir.",
+  "A focused web experience for an event initiative, balancing clear information, hierarchy and a contemporary visual language.":"Una experiencia web enfocada en una iniciativa de eventos, equilibrando información clara, jerarquía y un lenguaje visual contemporáneo.",
+  "A research-focused microsite for work in Samaná, structured to present scientific information through a clear and approachable web experience.":"Un micrositio de investigación para un proyecto en Samaná, estructurado para presentar información científica mediante una experiencia web clara y cercana.",
+  "Web Development":"Desarrollo web","Product Strategy":"Estrategia de producto","AI-Integrated Workflow":"Flujo integrado con IA","Product Research":"Investigación de producto","Accessibility":"Accesibilidad","AI-Assisted Development":"Desarrollo asistido por IA","Information Design":"Diseño de información","Research Communication":"Comunicación científica",
+  "Web · Healthcare":"Web · Salud","Web · E-commerce":"Web · Comercio electrónico","Web · Corporate":"Web · Corporativo","Web · Sustainability":"Web · Sostenibilidad","Web · Automotive":"Web · Automotriz","Web · Beauty":"Web · Belleza","Web · Institutional":"Web · Institucional","Web · Health Tech":"Web · Tecnología de salud","Web · Pharmacy":"Web · Farmacia",
+  "A public-facing healthcare website designed to make vaccination information easier to find.":"Un sitio web de salud diseñado para facilitar el acceso a información sobre vacunación.",
+  "A commerce-focused web experience built around product discovery and a clear purchase journey.":"Una experiencia web comercial enfocada en el descubrimiento de productos y un recorrido de compra claro.",
+  "A responsive corporate website focused on presenting services with clarity and confidence.":"Un sitio corporativo adaptable enfocado en presentar servicios con claridad y confianza.",
+  "A visually led web presence for an environmentally focused brand.":"Una presencia web visual para una marca comprometida con el medioambiente.",
+  "An automotive website structured to communicate the brand and its product offering.":"Un sitio automotriz estructurado para comunicar la marca y su oferta de productos.",
+  "A polished commerce experience for a beauty and hair extensions brand.":"Una experiencia comercial cuidada para una marca de belleza y extensiones de cabello.",
+  "An institutional web presence organized for accessible communication and community outreach.":"Una presencia web institucional organizada para una comunicación accesible y cercana a la comunidad.",
+  "A technology-focused healthcare website balancing service information and usability.":"Un sitio de salud y tecnología que equilibra información de servicios y usabilidad.",
+  "A healthcare web platform developed for clear access to services and information.":"Una plataforma web de salud desarrollada para facilitar el acceso a servicios e información.",
+  "A pharmacy website centered on accessible information and a straightforward digital experience.":"Un sitio web de farmacia centrado en información accesible y una experiencia digital sencilla.",
+  "A responsive corporate website developed to present the brand, its offering and key information clearly.":"Un sitio corporativo adaptable desarrollado para presentar claramente la marca, su oferta y la información clave.",
+  "UX/UI · Industrial system":"UX/UI · Sistema industrial","UX/UI · Support system":"UX/UI · Sistema de soporte","UX/UI · Web proposal":"UX/UI · Propuesta web",
+  "An industrial equipment maintenance system designed around operational clarity, reporting and control.":"Un sistema de mantenimiento de equipos industriales diseñado para ofrecer claridad operativa, reportes y control.",
+  "A support dashboard for tracking incidents, status and operational response at a glance.":"Un panel de soporte para visualizar rápidamente incidencias, estados y respuestas operativas.",
+  "A visual redesign proposal for a technology security company, focused on hierarchy and trust.":"Una propuesta de rediseño visual para una empresa de seguridad tecnológica, enfocada en jerarquía y confianza.",
+  "Selected collaborations":"Colaboraciones destacadas","Brands & organizations I’ve worked with.":"Marcas y organizaciones con las que he trabajado.","A selection of companies and institutions whose websites or digital experiences I have built or helped shape.":"Una selección de empresas e instituciones cuyos sitios web o experiencias digitales he creado o ayudado a desarrollar.",
+  "What I Do":"Lo que hago","Visual Design Foundations":"Fundamentos de diseño visual","Web Development & CMS":"Desarrollo web y CMS","UX/UI & Digital Product Design":"UX/UI y diseño de productos digitales","AI-Integrated Workflow":"Flujo de trabajo integrado con IA",
+  "A strong foundation in visual communication, composition and brand consistency that informs every digital experience I create.":"Una base sólida en comunicación visual, composición y coherencia de marca que guía cada experiencia digital que creo.",
+  "Build, launch and maintain responsive websites and digital platforms, with WordPress as my strongest CMS.":"Creo, publico y mantengo sitios web adaptables y plataformas digitales, con WordPress como mi CMS principal.",
+  "Turn user and business needs into clear structures, intuitive interfaces and functional product experiences.":"Transformo las necesidades de usuarios y negocios en estructuras claras, interfaces intuitivas y productos funcionales.",
+  "Integrate AI across research, content, design and development to explore ideas, solve problems, test solutions and improve delivery.":"Integro IA en investigación, contenido, diseño y desarrollo para explorar ideas, resolver problemas, probar soluciones y mejorar resultados.",
+  "A career shaped by visual design, CMS-based web development, UX/UI and the integration of AI across the complete creative and technical workflow.":"Una trayectoria marcada por el diseño visual, el desarrollo web con CMS, el UX/UI y la integración de IA en todo el proceso creativo y técnico.",
+  "Present":"Actualidad","Aug":"Ago","Oct":"Oct","Apr":"Abr","May":"May","Jun":"Jun","Sep":"Sep","Feb":"Feb","Nov":"Nov","Jul":"Jul",
+  "Digital Content & Publications Coordinator · UNPHU":"Coordinadora de Contenido Digital y Publicaciones · UNPHU","UX & Editorial Designer, Academic Journal · UNPHU":"Diseñadora UX y editorial, revista académica · UNPHU","UX/UI Designer, Contract · ICQ24 Inc.":"Diseñadora UX/UI por contrato · ICQ24 Inc.","Web Developer · Behealth PR":"Desarrolladora web · Behealth PR","UX/UI Designer, Temporary Project · Cervecería Nacional Dominicana":"Diseñadora UX/UI, proyecto temporal · Cervecería Nacional Dominicana","Web Department Coordinator · Gmedia Dominicana":"Coordinadora del Departamento Web · Gmedia Dominicana","Web Page & Graphic Designer · Zagirova Design":"Diseñadora web y gráfica · Zagirova Design",
+  "Coordinate websites, applications, digital content and publications for the Research Directorate.":"Coordino sitios web, aplicaciones, contenido digital y publicaciones para la Dirección de Investigaciones.",
+  "Lead UX and editorial design for the Journal of Sciences and Humanities, improving the web presentation and reading experience of peer-reviewed content.":"Lidero el diseño UX y editorial de la Revista de Ciencias y Humanidades, mejorando la presentación web y la experiencia de lectura del contenido arbitrado.",
+  "Delivered UX/UI design for the Cervecería Nacional Dominicana account with a multidisciplinary, multinational team.":"Desarrollé diseño UX/UI para la cuenta de Cervecería Nacional Dominicana junto a un equipo multidisciplinario y multinacional.",
+  "Built, updated and maintained production websites for a Puerto Rico-based healthcare client.":"Desarrollé, actualicé y mantuve sitios web en producción para un cliente del sector salud en Puerto Rico.",
+  "Designed interfaces and contributed to design-system guidelines with a focus on usability and visual consistency.":"Diseñé interfaces y contribuí a lineamientos del sistema de diseño, con enfoque en usabilidad y coherencia visual.",
+  "Coordinated web production, client relationships and a small team while building and maintaining CMS websites.":"Coordiné la producción web, la relación con clientes y un equipo pequeño, además de crear y mantener sitios con CMS.",
+  "Designed and built WordPress and Joomla websites alongside graphic design and social media assets.":"Diseñé y desarrollé sitios en WordPress y Joomla, además de piezas gráficas y contenido para redes sociales.",
+  "Visit UNPHU ↗":"Visitar UNPHU ↗","Visit ICQ24 ↗":"Visitar ICQ24 ↗","Visit BeHealth ↗":"Visitar BeHealth ↗","Visit CND ↗":"Visitar CND ↗","Visit Gmedia ↗":"Visitar Gmedia ↗","Visit Zagirova ↗":"Visitar Zagirova ↗",
+  "Education":"Educación","Multimedia Technology · ITLA":"Tecnología Multimedia · ITLA","My multimedia studies at Instituto Tecnológico de Las Américas gave me a practical foundation in visual communication, graphic design, web and editorial design, audiovisual production and digital interfaces—the starting point for my work in web development and UX/UI.":"Mis estudios de multimedia en el Instituto Tecnológico de Las Américas me dieron una base práctica en comunicación visual, diseño gráfico, diseño web y editorial, producción audiovisual e interfaces digitales: el punto de partida de mi trabajo en desarrollo web y UX/UI.","Visual Communication":"Comunicación visual","Web & Interface Design":"Diseño web y de interfaces","Visit ITLA website ↗":"Visitar sitio del ITLA ↗",
+  "Selected Tools":"Herramientas destacadas","Design & Prototyping":"Diseño y prototipado","My strongest area — interface design, prototyping and visual systems.":"Mi área más sólida: diseño de interfaces, prototipado y sistemas visuales.","Web Platforms & Development":"Plataformas web y desarrollo","CMS-led web work, responsive implementation and maintenance—with WordPress as my strongest platform.":"Trabajo web con CMS, implementación adaptable y mantenimiento, con WordPress como mi plataforma principal.","AI-Assisted Workflow":"Flujo de trabajo asistido por IA","AI tools integrated into design, development and image work — not a replacement for craft, but part of it.":"Herramientas de IA integradas al diseño, desarrollo y trabajo con imágenes: no reemplazan el criterio profesional, sino que forman parte del proceso.","✦ AI Image Editing & Enhancement":"✦ Edición y mejora de imágenes con IA","Other Creative Tools":"Otras herramientas creativas","Supporting tools for visual design, content creation and video editing.":"Herramientas de apoyo para diseño visual, creación de contenido y edición de video.",
+  "Open to remote opportunities.":"Disponible para oportunidades remotas.","Web Development · UX/UI · Digital Products":"Desarrollo web · UX/UI · Productos digitales","Download résumé":"Descargar currículum"
+};
+const requestedLang=new URLSearchParams(location.search).get('lang');
+const currentLang=requestedLang==='en'?'en':'es';
+document.documentElement.lang=currentLang;
+document.querySelectorAll('.language-switch a').forEach(link=>link.classList.toggle('active',link.dataset.lang===currentLang));
+if(currentLang==='es'){
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node=>{const value=node.nodeValue.trim();if(translations[value]) node.nodeValue=node.nodeValue.replace(value,translations[value]);});
+  document.querySelectorAll('[aria-label],[alt]').forEach(el=>['aria-label','alt'].forEach(attr=>{const value=el.getAttribute(attr);if(value&&translations[value]) el.setAttribute(attr,translations[value]);}));
+}
+
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){

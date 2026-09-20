@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Cindy Guzmán — Desarrolladora web y diseñadora UX/UI. Productos digitales, experiencias web y proyectos UX/UI destacados.">
-<title>Cindy Guzmán — Desarrolladora web y diseñadora UX/UI</title>
+<meta name="description" content="Cindy Guzmán — Web Developer &amp; UX/UI Designer. Selected digital products, web experiences and UX/UI work.">
+<title>Cindy Guzmán — Web Developer &amp; UX/UI Designer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1084,7 +1084,7 @@ const translations={
   "Open to remote opportunities.":"Disponible para oportunidades remotas.","Web Development · UX/UI · Digital Products":"Desarrollo web · UX/UI · Productos digitales","Download résumé":"Descargar currículum"
 };
 const requestedLang=new URLSearchParams(location.search).get('lang');
-const currentLang=requestedLang==='en'?'en':'es';
+const currentLang=requestedLang==='es'?'es':'en';
 document.documentElement.lang=currentLang;
 document.querySelectorAll('.language-switch a').forEach(link=>link.classList.toggle('active',link.dataset.lang===currentLang));
 if(currentLang==='es'){
